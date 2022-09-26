@@ -1,0 +1,330 @@
+<section class="">
+ <div class="container" style="max-width: 700px;">
+  <h3 class="bg-theme-colored p-15 mb-0 text-white">
+   Donation Through PayPal (One Time / Recurring)
+  </h3>
+  <div class="section-content bg-white p-30">
+   <div class="row">
+    <div class="col-md-12">
+     <!-- ===== START: Paypal Both Onetime/Recurring Form ===== -->
+     <form id="popup_paypal_donate_form_onetime_recurring">
+      <div class="row">
+       <div class="col-md-12">
+        <img alt="" src="images/payment-card-logo-sm.png"/>
+        <div class="form-group mt-20 mb-20">
+         <label>
+          <strong>
+           Payment Type
+          </strong>
+         </label>
+         <br/>
+         <label class="radio-inline">
+          <input checked="" name="payment_type" type="radio" value="one_time"/>
+          One Time
+         </label>
+         <label class="radio-inline">
+          <input name="payment_type" type="radio" value="recurring"/>
+          Recurring
+         </label>
+        </div>
+       </div>
+       <div class="col-sm-12" id="donation_type_choice">
+        <div class="form-group mb-20">
+         <label>
+          <strong>
+           Donation Type
+          </strong>
+         </label>
+         <div class="radio mt-5">
+          <label class="radio-inline">
+           <input checked="" name="t3" type="radio" value="D"/>
+           Daily
+          </label>
+          <label class="radio-inline">
+           <input name="t3" type="radio" value="W"/>
+           Weekly
+          </label>
+          <label class="radio-inline">
+           <input name="t3" type="radio" value="M"/>
+           Monthly
+          </label>
+          <label class="radio-inline">
+           <input name="t3" type="radio" value="Y"/>
+           Yearly
+          </label>
+         </div>
+        </div>
+       </div>
+       <div class="col-sm-6">
+        <div class="form-group mb-20">
+         <label>
+          <strong>
+           I Want to Donate for
+          </strong>
+         </label>
+         <select class="form-control" name="item_name">
+          <option value="Educate Children">
+           Educate Children
+          </option>
+          <option value="Child Camps">
+           Child Camps
+          </option>
+          <option value="Clean Water for Life">
+           Clean Water for Life
+          </option>
+          <option value="Campaign for Child Poverty">
+           Campaign for Child Poverty
+          </option>
+         </select>
+        </div>
+       </div>
+       <div class="col-sm-6">
+        <div class="form-group mb-20">
+         <label>
+          <strong>
+           Currency
+          </strong>
+         </label>
+         <select class="form-control" name="currency_code">
+          <option value="">
+           Select Currency
+          </option>
+          <option selected="selected" value="USD">
+           USD - U.S. Dollars
+          </option>
+          <option value="AUD">
+           AUD - Australian Dollars
+          </option>
+          <option value="BRL">
+           BRL - Brazilian Reais
+          </option>
+          <option value="GBP">
+           GBP - British Pounds
+          </option>
+          <option value="HKD">
+           HKD - Hong Kong Dollars
+          </option>
+          <option value="HUF">
+           HUF - Hungarian Forints
+          </option>
+          <option value="INR">
+           INR - Indian Rupee
+          </option>
+          <option value="ILS">
+           ILS - Israeli New Shekels
+          </option>
+          <option value="JPY">
+           JPY - Japanese Yen
+          </option>
+          <option value="MYR">
+           MYR - Malaysian Ringgit
+          </option>
+          <option value="MXN">
+           MXN - Mexican Pesos
+          </option>
+          <option value="TWD">
+           TWD - New Taiwan Dollars
+          </option>
+          <option value="NZD">
+           NZD - New Zealand Dollars
+          </option>
+          <option value="NOK">
+           NOK - Norwegian Kroner
+          </option>
+          <option value="PHP">
+           PHP - Philippine Pesos
+          </option>
+          <option value="PLN">
+           PLN - Polish Zlotys
+          </option>
+          <option value="RUB">
+           RUB - Russian Rubles
+          </option>
+          <option value="SGD">
+           SGD - Singapore Dollars
+          </option>
+          <option value="SEK">
+           SEK - Swedish Kronor
+          </option>
+          <option value="CHF">
+           CHF - Swiss Francs
+          </option>
+          <option value="THB">
+           THB - Thai Baht
+          </option>
+          <option value="TRY">
+           TRY - Turkish Liras
+          </option>
+         </select>
+        </div>
+       </div>
+       <div class="col-sm-12">
+        <div class="form-group mb-20">
+         <label>
+          <strong>
+           How much do you want to donate?
+          </strong>
+         </label>
+         <div class="radio mt-5">
+          <label class="radio-inline">
+           <input name="amount" type="radio" value="20"/>
+           $20
+          </label>
+          <label class="radio-inline">
+           <input name="amount" type="radio" value="50"/>
+           $50
+          </label>
+          <label class="radio-inline">
+           <input name="amount" type="radio" value="100"/>
+           $100
+          </label>
+          <label class="radio-inline">
+           <input name="amount" type="radio" value="200"/>
+           $200
+          </label>
+          <label class="radio-inline">
+           <input name="amount" type="radio" value="500"/>
+           $500
+          </label>
+          <label class="radio-inline">
+           <input name="amount" type="radio" value="other"/>
+           Other Amount
+          </label>
+         </div>
+         <div id="custom_other_amount">
+          <label>
+           <strong>
+            Custom Amount:
+           </strong>
+          </label>
+         </div>
+        </div>
+       </div>
+       <div class="col-sm-12">
+        <div class="form-group">
+         <button class="btn btn-flat btn-dark btn-theme-colored mt-10 pl-30 pr-30" data-loading-text="Please wait..." type="submit">
+          Donate Now
+         </button>
+        </div>
+       </div>
+      </div>
+     </form>
+     <!-- Script for Donation Form Custom Amount -->
+     <script type="text/javascript">
+      $(document).ready(function(e) {
+              var $donation_form = $("#popup_paypal_donate_form_onetime_recurring");
+              //toggle custom amount
+              var $custom_other_amount = $donation_form.find("#custom_other_amount");
+              $custom_other_amount.hide();
+              $donation_form.find("[name='amount']").change(function() {
+                  var $this = $(this);
+                  if ($this.val() == 'other') {
+                    $custom_other_amount.show().append('<div class="input-group"><span class="input-group-addon">$</span> <input id="input_other_amount" type="text" name="amount" class="form-control" value="100"/></div>');
+                  }
+                  else{
+                    $custom_other_amount.children( ".input-group" ).remove();
+                    $custom_other_amount.hide();
+                  }
+              });
+
+              //toggle donation_type_choice
+              var $donation_type_choice = $donation_form.find("#donation_type_choice");
+              $donation_type_choice.hide();
+              $("input[name='payment_type']").change(function() {
+                  if (this.value == 'recurring') {
+                      $donation_type_choice.show();
+                  }
+                  else {
+                      $donation_type_choice.hide();
+                  }
+              });
+
+
+              // submit form on click
+              $donation_form.on('submit', function(e){
+                  //$( "#popup_paypal_donate_form-onetime" ).submit();
+                  var item_name = $donation_form.find("select[name='item_name'] option:selected").val();
+                  var currency_code = $donation_form.find("select[name='currency_code'] option:selected").val();
+                  var amount = $donation_form.find("[name='amount']:checked").val();
+                  var t3 = $donation_form.find("input[name='t3']:checked").val();
+
+                  if ( amount == 'other') {
+                    amount = $donation_form.find("#input_other_amount").val();
+                  }
+
+                  // submit proper form now
+                  if ( $("input[name='payment_type']:checked", $donation_form).val() == 'recurring' ) {
+                      var recurring_form = $('#popup_paypal_donate_form-recurring');
+
+                      recurring_form.find("input[name='item_name']").val(item_name);
+                      recurring_form.find("input[name='currency_code']").val(currency_code);
+                      recurring_form.find("input[name='a3']").val(amount);
+                      recurring_form.find("input[name='t3']").val(t3);
+
+                      recurring_form.find("input[type='submit']").trigger('click');
+
+                  } else if ( $("input[name='payment_type']:checked", $donation_form).val() == 'one_time' ) {
+                      var onetime_form = $('#popup_paypal_donate_form-onetime');
+
+                      onetime_form.find("input[name='item_name']").val(item_name);
+                      onetime_form.find("input[name='currency_code']").val(currency_code);
+                      onetime_form.find("input[name='amount']").val(amount);
+
+                      onetime_form.find("input[type='submit']").trigger('click');
+                  }
+                  return false;
+              });
+
+            });
+     </script>
+     <!-- Paypal Onetime Form -->
+     <form action="https://www.paypal.com/cgi-bin/webscr" class="hidden" id="popup_paypal_donate_form-onetime" method="post">
+      <input name="cmd" type="hidden" value="_donations"/>
+      <input name="business" type="hidden" value="accounts@thememascot.com"/>
+      <input name="item_name" type="hidden" value="Educate Children"/>
+      <!-- updated dynamically -->
+      <input name="currency_code" type="hidden" value="USD"/>
+      <!-- updated dynamically -->
+      <input name="amount" type="hidden" value="20"/>
+      <!-- updated dynamically -->
+      <input name="no_shipping" type="hidden" value="1"/>
+      <input name="cn" type="hidden" value="Comments..."/>
+      <input name="tax" type="hidden" value="0"/>
+      <input name="lc" type="hidden" value="US"/>
+      <input name="bn" type="hidden" value="PP-DonationsBF"/>
+      <input name="return" type="hidden" value="http://www.yoursite.com/thankyou.html"/>
+      <input name="cancel_return" type="hidden" value="http://www.yoursite.com/paymentcancel.html"/>
+      <input name="notify_url" type="hidden" value="http://www.yoursite.com/notifypayment.php"/>
+      <input name="submit" type="submit"/>
+     </form>
+     <!-- Paypal Recurring Form -->
+     <form action="https://www.paypal.com/cgi-bin/webscr" class="hidden" id="popup_paypal_donate_form-recurring" method="post">
+      <input name="cmd" type="hidden" value="_xclick-subscriptions"/>
+      <input name="business" type="hidden" value="accounts@thememascot.com"/>
+      <input name="item_name" type="hidden" value="Educate Children"/>
+      <!-- updated dynamically -->
+      <input name="currency_code" type="hidden" value="USD"/>
+      <!-- updated dynamically -->
+      <input name="a3" type="hidden" value="20"/>
+      <!-- updated dynamically -->
+      <input name="t3" type="hidden" value="D"/>
+      <!-- updated dynamically -->
+      <input name="p3" type="hidden" value="1"/>
+      <input name="rm" type="hidden" value="2"/>
+      <input name="src" type="hidden" value="1"/>
+      <input name="sra" type="hidden" value="1"/>
+      <input name="no_shipping" type="hidden" value="0"/>
+      <input name="no_note" type="hidden" value="1"/>
+      <input name="lc" type="hidden" value="US"/>
+      <input name="bn" type="hidden" value="PP-DonationsBF"/>
+      <input name="return" type="hidden" value="http://www.yoursite.com/thankyou.html"/>
+      <input name="cancel_return" type="hidden" value="http://www.yoursite.com/paymentcancel.html"/>
+      <input name="notify_url" type="hidden" value="http://www.yoursite.com/notifypayment.php"/>
+      <input name="submit" type="submit"/>
+     </form>
+     <!-- ===== END: Paypal Both Onetime/Recurring Form ===== -->
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
