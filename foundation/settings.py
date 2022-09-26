@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from sqlite3 import DatabaseError
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,8 +27,10 @@ SECRET_KEY = 'django-insecure-jp7l&f)e(p$$3jz51uh!4(-3cl2jk6%ud!p)0psxjmr=jbt=56
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
-
+# heroku deployment
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DatabaseError['default'].update(db_from_env)
 # Application definition
 
 INSTALLED_APPS = [
