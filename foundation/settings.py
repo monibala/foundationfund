@@ -147,4 +147,3 @@ PAYPAL_RECEIVER_EMAIL = 'sb-1pdsh8805287@business.example.com'
 PAYPAL_TEST = False
 
 
-django_heroku.settings(locals())
