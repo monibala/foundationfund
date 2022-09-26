@@ -58,12 +58,12 @@
           <div class="widget no-border m-0">
             <ul class="list-inline pull-right flip sm-pull-none sm-text-center mt-5">
               <li class="m-0 p1-10 pr-10" style="display: inline-block;padding:2px;"><a class="text-white"
-                href="tel:{{info.phone}}"> <i class="fa fa-phone text-white"></i>123 456 789</a> </li>&nbsp;
-              <li class="text-white m-0 p1-10 pr-10" style="display: inline-block;"> <i class="fa fa-clock-o text-white"></i> 
-                8.00a.m
+                href="tel:{{info.phone}}"> <i class="fa fa-phone text-white"></i> {{info.phone}}</a> </li>&nbsp;
+              <li class="text-white m-0 p1-10 pr-10" style="display: inline-block;"> <i class="fa fa-clock-o text-white"></i> {{OpeningHour.0.day}}
+                {{OpeningHour.0.time}}
               </li>&nbsp;
               <li class="m-0 p1-10 pr-10" style="display: inline-block;"><a class="text-white"
-                href="mailto:{{info.email}}"> <i class="fa fa-envelope-o text-white"></i> abcd@gmail.com</a> </li>&nbsp;
+                href="mailto:{{info.email}}"> <i class="fa fa-envelope-o text-white"></i> {{info.email}}</a> </li>&nbsp;
             </ul>
           </div>
         </div>
@@ -152,16 +152,31 @@
                     <article class="post clearfix">
                       <div class="entry-header">
                         <div class="post-thumb"> <img class="img-fullwidth"
-                            src="" alt=""> </div>
+                            src="{{latestnews.0.img.url}} " alt=""> </div>
                       </div>
                       <div class="post-details">
-                        <h4 class="entry-title mt-10"><a href="#"></a></h4>
-                        <p class=""><a class="text-theme-colored" href="">
+                        <h4 class="entry-title mt-10"><a href="#">{{latestnews.0.title}}</a></h4>
+                        <p class="">{{latestnews.0.shortDes}}<a class="text-theme-colored" href="{% url 'singlenews' latestnews.0.slug %}">
                             read more →</a> </p>
                       </div>
                     </article>
                   </div>
-                 
+                  <div class="col4">
+                    <h5 class=""><strong>Latest News:</strong></h5>
+                    <div class="list-dashed">
+                      {% for data in latestnews %}
+                      <article class="post media-post clearfix pb-0 mb-10"> <a href="{% url 'singlenews' data.slug %}" class="post-thumb">
+                          <img alt="" src="{{data.img.url}}" style="
+                                                                  width: 66px;
+                                                                  height: 66px;
+                                                                  object-fit: contain;" />
+                        </a>
+                        <div class="post-right">
+                          <h5 class="post-title mt-0"><a href="{% url 'singlenews' data.slug %}">{{data.title}}</a></h5>
+                          <p>{{data.time|date}}</p>
+                        </div>
+                      </article>
+                      {% endfor %}
                     </div>
                   </div>
                 </div>
