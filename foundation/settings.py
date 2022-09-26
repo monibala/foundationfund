@@ -154,6 +154,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 PAYPAL_RECEIVER_EMAIL = 'sb-1pdsh8805287@business.example.com'
 
 PAYPAL_TEST = False
-STATICFILES_STORAGE ='whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE ='whitenoise.storage.CompressedStaticFilesStorage'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
