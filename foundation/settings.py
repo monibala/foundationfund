@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import django_heroku
 from pathlib import Path
 from sqlite3 import DatabaseError
 
@@ -147,3 +147,4 @@ PAYPAL_RECEIVER_EMAIL = 'sb-1pdsh8805287@business.example.com'
 PAYPAL_TEST = False
 
 
+django_heroku.settings(locals())
