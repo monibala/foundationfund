@@ -1,0 +1,18 @@
+<article class="post media-post clearfix pb-0 mb-10">
+    <a class="post-thumb" href="{% url "singlenews" data.slug %}">
+        <img alt="" style="
+                                                                  width: 66px;
+                                                                  height: 66px;
+                                                                  object-fit: cover;" src="{{data.img.url}}" />
+    </a>
+    <div class="post-right">
+        <h5 class="post-title mt-0">
+            <a href="{% url "singlenews" data.slug %}">
+                {{data.title}}
+            </a>
+        </h5>
+        <p>
+            {{data.shortDes|slice:":43"}}...
+        </p>
+    </div>
+</article>

@@ -1,0 +1,761 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block body %}
+<!-- Start main-content -->
+<div class="main-content">
+  {% if sliders %}
+  {% include 'home/component/headerslider.html' with slider=sliders %}
+  {% endif %}
+
+  <!-- Section: home-boxes -->
+  <section class="overlay-theme-colored-8 " data-bg-img="images/bg/bg10.jpg" style="background-color: rgba(242, 101, 34, 0.8) ;margin-top:85px;height:250px;">
+    <div class="container pt-0 pb-0">
+      <div class="section-content">
+        <div class="row" data-margin-top="-90px">
+          <div class="col-sm-12 col-md-4" style="margin-top: -80px;;">
+            <div class="icon-box p-40 iconbox-theme-colored bg-white border-1px text-center">
+              <a class="icon" href="#">
+                <i class="flaticon-charity-world-in-your-hands font-48 font-weight-100"></i>
+              </a>
+              <h4 class="text-uppercase mt-0">Expert Engineers</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias non nulla placeat, odio, qui
+                dicta alias.</p>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4"  style="margin-top: -80px;">
+            <div class="icon-box p-40 iconbox-theme-colored bg-white border-1px text-center">
+              <a class="icon" href="#">
+                <i class="flaticon-charity-shaking-hands-inside-a-heart font-48 font-weight-100"></i>
+              </a>
+              <h4 class="text-uppercase mt-0">Latest Tools</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias non nulla placeat, odio, qui
+                dicta alias.</p>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4"  style="margin-top: -80px;">
+            <div class="icon-box p-40 iconbox-theme-colored bg-white border-1px text-center">
+              <a class="icon" href="#">
+                <i class="flaticon-charity-child-hand-on-adult-hand font-48 font-weight-100"></i>
+              </a>
+              <h4 class="text-uppercase mt-0">Quick Delivery</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias non nulla placeat, odio, qui
+                dicta alias.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-6 mt-20">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 pl-0">
+                <div class="img-hover-border mt-sm-40">
+                  <img class="img-fullwidth" src="{% static 'images/about/d1.jpg' %} " alt="">
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 pl-0 pr-0">
+                <div class="img-hover-border mt-sm-30">
+                  <img class="img-fullwidth" src="{% static 'images/about/d2.jpg' %} " alt="">
+                </div>
+                <div class="img-hover-border mt-15 mt-sm-30">
+                  <img class="img-fullwidth" src="{% static 'images/about/a4.jpg' %} " alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="about-details">
+              <h2 class="font-36 mt-0"> Welcome to <span class="text-theme-colored">FundPro</span> Please Rise your
+                Helping Hand</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, odioserunt provident maiores
+                consectetur adipisicing elit. Aliquam odio dese runtesseu provident maiores libero porro dolorem
+                est. Velit necessitatibus fugiat error incidunt excepturi doloribus officia aspernatur quod libero
+                Velit necessitatibus fugiat error incidunt excepturi doloribus officia</p>
+              <div class="singnature mt-20">
+                <img src="{% static 'images/signature.png' %} " alt="img1">
+              </div>
+              <a href="#" class="btn btn-flat btn-colored btn-theme-colored mt-15 mr-15">Read More</a><a href="#"
+                class="btn btn-flat btn-colored btn-default btn-theme-colored mt-15">Get a Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Causes -->
+  <section id="causes" class="bg-silver-light">
+    <div class="container">
+      <div class="section-title text-center">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1" style="margin-left:115px;">
+            <h2 class="text-uppercase line-bottom-center mt-0">Our <span
+                class="text-theme-colored font-weight-600">Causes</span></h2>
+            <div class="title-icon">
+              <i class="flaticon-charity-hand-holding-a-heart"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem voluptatem obcaecati! <br>ipsum
+              dolor sit Rem autem voluptatem obcaecati</p>
+          </div>
+        </div>
+      </div>
+      <div class="row multi-row-clearfix">
+        <div class="owl-carousel-3col">
+        {% for data in couseslist %}
+          {% include 'couses/component/homesinglecouse.html' with data=data %}
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider: Funfact -->
+  <section class="divider parallax layer-overlay overlay-dark-9" data-bg-img="images/bg/bg4.jpg"
+    data-parallax-ratio="0.7">
+    <div class="container pt-80 pb-80"   style=" background-image: url('/static/images/bg/bg4.jpg');height:300px;max-width:2000px;">
+      <div class="row" style="margin-right:60px;padding-top:5px;padding-right:100px;padding-left:180px;">
+        <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+          <div class="funfact text-center">
+            <h2><i class="pe-7s-smile mt-5 text-white"></i></h2>
+            <h2 data-animation-duration="2000" data-value="1054"
+              class="animate-number text-white font-42 font-weight-500 mt-0 mb-0">0</h2>
+            <h2 class="text-white text-uppercase font-weight-600" style="font-size:18px;">Happy Donators</h2>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+          <div class="funfact text-center">
+          <h2>  <i class="pe-7s-rocket mt-5 text-white"></i></h2>
+            <h2 data-animation-duration="2000" data-value="875"
+              class="animate-number text-white font-42 font-weight-500 mt-0 mb-0">0</h2>
+            <h2 class="text-white text-uppercase font-weight-600" style="font-size:18px;">Success Mission</h2>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+          <div class="funfact text-center">
+           <h2> <i class="pe-7s-add-user mt-5 text-white"></i></h2>
+            <h2 data-animation-duration="2000" data-value="1248"
+              class="animate-number text-white font-42 font-weight-500 mt-0 mb-0">0</h2>
+            <h2 class="text-white text-uppercase font-weight-600" style="font-size:18px;">Volunteer Reached</h2>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+          <div class="funfact text-center">
+           <h2> <i class="pe-7s-global mt-5 text-white"></i></h2>
+            <h2 data-animation-duration="2000" data-value="54"
+              class="animate-number text-white font-42 font-weight-500 mt-0 mb-0">0</h2>
+            <h2 class="text-white text-uppercase font-weight-600" style="font-size:18px;">Globalization Work</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Mission  -->
+  <section>
+    <div class="container pb-30">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-8 pb-sm-20">
+            <h3 class="line-bottom mt-0">Our Mission</h3>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="icon-box left media bg-silver-light border-1px border-theme-colored p-15 mb-20"> <a
+                    class="media-left pull-left flip" href="#"><i
+                      class="flaticon-charity-shaking-hands-inside-a-heart text-theme-colored"></i></a>
+                  <div class="media-body">
+                    <h4 class="font-15 text-uppercase">Save The children</h4>
+                    <p>Lorem ipsum dolor sit ametcons ecte adipisicing eli cumconse teturs lorem ipsum dolor is
+                      emmit</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="icon-box left media bg-silver-light border-1px border-theme-colored p-15 mb-20"> <a
+                    class="media-left pull-left flip" href="#"><i
+                      class="flaticon-charity-shelter text-theme-colored"></i></a>
+                  <div class="media-body">
+                    <h4 class="font-15 text-uppercase">Help The Helpless</h4>
+                    <p>Lorem ipsum dolor sit ametcons ecte adipisicing eli cumconse teturs lorem ipsum dolor is
+                      emmit</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="icon-box left media bg-silver-light border-1px border-theme-colored p-15 mb-20"> <a
+                    class="media-left pull-left flip" href="#"><i
+                      class="flaticon-charity-responsible-use-of-water text-theme-colored"></i></a>
+                  <div class="media-body">
+                    <h4 class="font-15 text-uppercase">Pure Water For Poor</h4>
+                    <p>Lorem ipsum dolor sit ametcons ecte adipisicing eli cumconse teturs lorem ipsum dolor is
+                      emmit</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="icon-box left media bg-silver-light border-1px border-theme-colored p-15 mb-20"> <a
+                    class="media-left pull-left flip" href="#"><i
+                      class="flaticon-charity-make-a-donation text-theme-colored"></i></a>
+                  <div class="media-body">
+                    <h4 class="font-15 text-uppercase">Donation for poor</h4>
+                    <p>Lorem ipsum dolor sit ametcons ecte adipisicing eli cumconse teturs lorem ipsum dolor is
+                      emmit</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <h3 class="line-bottom border-bottom mt-0">Upcoming Events</h3>
+            {% for data in eventlist|slice:":3" %}
+            {% include 'events/component/homeSingleEvent.html' with data=data %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: volunteers -->
+  {% comment %} <section id="team" class="bg-silver-light">
+    <div class="container">
+      <div class="section-title text-center">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-uppercase line-bottom-center mt-0">Our <span
+                class="text-theme-colored font-weight-600">volunteers</span></h2>
+            <div class="title-icon">
+              <i class="flaticon-charity-hand-holding-a-heart"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem voluptatem obcaecati! <br>ipsum
+              dolor sit Rem autem voluptatem obcaecati</p>
+          </div>
+        </div>
+      </div>
+      <div class="section-content">
+        <div class="row multi-row-clearfix">
+          <div class="col-xs-12 col-sm-6 col-md-4 mb-30">
+            <div class="team-member clearfix">
+              <div class="team-thumb">
+                <img alt="" src="{% static 'images/team/team1.jpg' %} " class="img-fullwidth">
+                <div class="overlay">
+                  <div class="content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea iste nihil ex libero ab esse,
+                      dignissimos maxime enim sint laborum.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="team-info bg-theme-colored">
+                <h3 class="mt-0 text-white">Sakib Jacson</h3>
+                <ul class="styled-icons icon-circled icon-theme-colored">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 mb-30">
+            <div class="team-member clearfix">
+              <div class="team-thumb">
+                <img alt="" src="{% static 'images/team/team3.jpg' %} " class="img-fullwidth">
+                <div class="overlay">
+                  <div class="content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea iste nihil ex libero ab esse,
+                      dignissimos maxime enim sint laborum.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="team-info bg-theme-colored">
+                <h3 class="mt-0 text-white">Jerin Jacson</h3>
+                <ul class="styled-icons icon-circled icon-theme-colored">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 mb-30">
+            <div class="team-member clearfix">
+              <div class="team-thumb">
+                <img alt="" src="{% static 'images/team/team2.jpg' %} " class="img-fullwidth">
+                <div class="overlay">
+                  <div class="content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea iste nihil ex libero ab esse,
+                      dignissimos maxime enim sint laborum.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="team-info bg-theme-colored">
+                <h3 class="mt-0 text-white">Alex Jacobson</h3>
+                <ul class="styled-icons icon-circled icon-theme-colored">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> {% endcomment %}
+
+  <!-- divider: Emergency Services -->
+  <section class="divider parallax layer-overlay overlay-dark-9" data-stellar-background-ratio="0.2"
+    data-bg-img="images/bg/bg2.jpg">
+    <div class="container"   style=" background-image: url('/static/images/bg/bg2.jpg');max-width:2000px;height:300px;">
+      <div class="section-content text-center">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-theme-colored">How you can help us</h2>
+            <h2 class="text-white">Just call at <a href="tel:{{info.phone}}"><span class="text-theme-colored">{{info.phone}}</span></a> to make a
+              donation</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Become a Volunteer -->
+  <section id="team" class="bg-silver-light">
+    <div class="container">
+      <div class="section-title text-center">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1" style="margin-left:115px;">
+            <h2 class="text-uppercase line-bottom-center mt-0">Our <span
+                class="text-theme-colored font-weight-600">volunteers</span></h2>
+            <div class="title-icon">
+              <i class="flaticon-charity-hand-holding-a-heart"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem voluptatem obcaecati! <br>ipsum
+              dolor sit Rem autem voluptatem obcaecati</p>
+          </div>
+        </div>
+      </div>
+      <div class="section-content">
+        <div class="row multi-row-clearfix">
+          <div class="col-xs-12 col-sm-6 col-md-4 mb-30">
+            <div class="team-member clearfix">
+              <div class="team-thumb">
+                <img alt="" src="{% static 'images/team/team1.jpg' %} " class="img-fullwidth">
+                <div class="overlay">
+                  <div class="content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea iste nihil ex libero ab esse,
+                      dignissimos maxime enim sint laborum.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="team-info bg-theme-colored">
+                <h3 class="mt-0 text-white">Sakib Jacson</h3>
+                <ul class="styled-icons icon-circled icon-theme-colored">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 mb-30">
+            <div class="team-member clearfix">
+              <div class="team-thumb">
+                <img alt="" src="{% static 'images/team/team3.jpg' %} " class="img-fullwidth">
+                <div class="overlay">
+                  <div class="content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea iste nihil ex libero ab esse,
+                      dignissimos maxime enim sint laborum.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="team-info bg-theme-colored">
+                <h3 class="mt-0 text-white">Jerin Jacson</h3>
+                <ul class="styled-icons icon-circled icon-theme-colored">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 mb-30">
+            <div class="team-member clearfix">
+              <div class="team-thumb">
+                <img alt="" src="{% static 'images/team/team2.jpg' %} " class="img-fullwidth">
+                <div class="overlay">
+                  <div class="content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea iste nihil ex libero ab esse,
+                      dignissimos maxime enim sint laborum.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="team-info bg-theme-colored">
+                <h3 class="mt-0 text-white">Alex Jacobson</h3>
+                <ul class="styled-icons icon-circled icon-theme-colored">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- Section: Testimonials -->
+  <section class="divider parallax layer-overlay overlay-dark-9" data-bg-img="images/bg/bg23.jpg"
+    data-parallax-ratio="0.7">
+    <div class="container pt-60 pb-60"   style=" background-image: url('/static/images/bg/bg23.jpg');height:500px;max-width:2000px;">
+      <div class="section-title text-center">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2" style="margin-left:200px;">
+            <h2 class="text-white mt-0">Happy Donors Say</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" style="width:1200px;margin-left:70px;">
+          <div class="pt-20">
+            <div class="testimonial style1 owl-carousel-2col">
+              <div class="item">
+                <div class="comment border-radius-15px">
+                  <p>Lorem ipsum dolor sit ametconse ctetur adipisicing elitvolup tatem error sit qui dolorem
+                    facilis. adipisicing elitvolup tatem error</p>
+                </div>
+                <div class="content mt-20">
+                  <div class="thumb pull-right">
+                    <img class="img-circle" alt="" src="{% static 'images/testimonials/s1.jpg' %} ">
+                  </div>
+                  <div class="patient-details text-right pull-right mr-20 mt-10">
+                    <h5 class="text-theme-colored">Jonathan Smith</h5>
+                    <h6 class="title">kode inc.</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="comment border-radius-15px">
+                  <p>Lorem ipsum dolor sit ametconse ctetur adipisicing elitvolup tatem error sit qui dolorem
+                    facilis. adipisicing elitvolup tatem error</p>
+                </div>
+                <div class="content mt-20">
+                  <div class="thumb pull-right">
+                    <img class="img-circle" alt="" src="{% static 'images/testimonials/s2.jpg' %} ">
+                  </div>
+                  <div class="patient-details text-right pull-right mr-20 mt-10">
+                    <h5 class="text-theme-colored">Jonathan Smith</h5>
+                    <h6 class="title">kode inc.</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="comment border-radius-15px">
+                  <p>Lorem ipsum dolor sit ametconse ctetur adipisicing elitvolup tatem error sit qui dolorem
+                    facilis. adipisicing elitvolup tatem error</p>
+                </div>
+                <div class="content mt-20">
+                  <div class="thumb pull-right">
+                    <img class="img-circle" alt="" src="{% static 'images/testimonials/s3.jpg' %} ">
+                  </div>
+                  <div class="patient-details text-right pull-right mr-20 mt-10">
+                    <h5 class="text-theme-colored">Jonathan Smith</h5>
+                    <h6 class="title">kode inc.</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Gallery -->
+  <section id="gallery" class="bg-silver-light">
+    <div class="container">
+      <div class="section-title text-center">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1" style="margin-left:115px;">
+            <h2 class="text-uppercase line-bottom-center mt-0">Photo <span
+                class="text-theme-colored font-weight-600">Gallery</span></h2>
+            <div class="title-icon">
+              <i class="flaticon-charity-hand-holding-a-heart"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem voluptatem obcaecati! <br>ipsum
+              dolor sit Rem autem voluptatem obcaecati</p>
+          </div>
+        </div>
+      </div>
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- Portfolio Gallery Grid -->
+
+            <div class="gallery-isotope grid-4 gutter-small clearfix" data-lightbox="gallery">
+              <!-- Portfolio Item Start -->
+              <div class="gallery-item">
+                <div class="thumb">
+                  <img alt="project" src="{% static 'images/gallery/gallery-md1.jpg' %} " class="img-fullwidth">
+                  <div class="overlay-shade"></div>
+                  <div class="icons-holder">
+                    <div class="icons-holder-inner">
+                      <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                        <a href="{% static 'images/gallery/gallery-lg1.jpg' %} " data-lightbox-gallery="gallery"><i
+                            class="fa fa-picture-o"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Portfolio Item End -->
+
+              <!-- Portfolio Item Start -->
+              <div class="gallery-item">
+                <div class="thumb">
+                  <img alt="project" src="{% static 'images/gallery/gallery-md2.jpg' %} " class="img-fullwidth">
+                  <div class="overlay-shade"></div>
+                  <div class="icons-holder">
+                    <div class="icons-holder-inner">
+                      <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                        <a href="{% static 'images/gallery/gallery-lg2.jpg' %} " data-lightbox-gallery="gallery"><i
+                            class="fa fa-picture-o"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Portfolio Item End -->
+
+              <!-- Portfolio Item Start -->
+              <div class="gallery-item">
+                <div class="thumb">
+                  <img alt="project" src="{% static 'images/gallery/gallery-md3.jpg' %} " class="img-fullwidth">
+                  <div class="overlay-shade"></div>
+                  <div class="icons-holder">
+                    <div class="icons-holder-inner">
+                      <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                        <a href="{% static 'images/gallery/gallery-lg3.jpg' %} " data-lightbox-gallery="gallery"><i
+                            class="fa fa-picture-o"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Portfolio Item End -->
+
+              <!-- Portfolio Item Start -->
+              <div class="gallery-item">
+                <div class="thumb">
+                  <img alt="project" src="{% static 'images/gallery/gallery-md4.jpg' %} " class="img-fullwidth">
+                  <div class="overlay-shade"></div>
+                  <div class="icons-holder">
+                    <div class="icons-holder-inner">
+                      <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                        <a href="{% static 'images/gallery/gallery-lg4.jpg' %} " data-lightbox-gallery="gallery"><i
+                            class="fa fa-picture-o"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Portfolio Item End -->
+
+              <!-- Portfolio Item Start -->
+              <div class="gallery-item">
+                <div class="thumb">
+                  <img alt="project" src="{% static 'images/gallery/gallery-md5.jpg' %} " class="img-fullwidth">
+                  <div class="overlay-shade"></div>
+                  <div class="icons-holder">
+                    <div class="icons-holder-inner">
+                      <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                        <a href="{% static 'images/gallery/gallery-lg5.jpg' %} " data-lightbox-gallery="gallery"><i
+                            class="fa fa-picture-o"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Portfolio Item End -->
+
+              <!-- Portfolio Item Start -->
+              <div class="gallery-item">
+                <div class="thumb">
+                  <img alt="project" src="{% static 'images/gallery/gallery-md6.jpg' %} " class="img-fullwidth">
+                  <div class="overlay-shade"></div>
+                  <div class="icons-holder">
+                    <div class="icons-holder-inner">
+                      <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                        <a href="{% static 'images/gallery/gallery-lg6.jpg' %} " data-lightbox-gallery="gallery"><i
+                            class="fa fa-picture-o"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Portfolio Item End -->
+
+              <!-- Portfolio Item Start -->
+              <div class="gallery-item">
+                <div class="thumb">
+                  <img alt="project" src="{% static 'images/gallery/gallery-md7.jpg' %} " class="img-fullwidth">
+                  <div class="overlay-shade"></div>
+                  <div class="icons-holder">
+                    <div class="icons-holder-inner">
+                      <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                        <a href="{% static 'images/gallery/gallery-lg7.jpg' %} " data-lightbox-gallery="gallery"><i
+                            class="fa fa-picture-o"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Portfolio Item End -->
+
+              <!-- Portfolio Item Start -->
+              <div class="gallery-item">
+                <div class="thumb">
+                  <img alt="project" src="{% static 'images/gallery/gallery-md8.jpg' %} " class="img-fullwidth">
+                  <div class="overlay-shade"></div>
+                  <div class="icons-holder">
+                    <div class="icons-holder-inner">
+                      <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                        <a href="{% static 'images/gallery/gallery-lg8.jpg' %} " data-lightbox-gallery="gallery"><i
+                            class="fa fa-picture-o"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Portfolio Item End -->
+
+              <!-- Portfolio Item Start -->
+              <div class="gallery-item">
+                <div class="thumb">
+                  <img alt="project" src="{% static 'images/gallery/gallery-md9.jpg' %} " class="img-fullwidth">
+                  <div class="overlay-shade"></div>
+                  <div class="icons-holder">
+                    <div class="icons-holder-inner">
+                      <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                        <a href="{% static 'images/gallery/gallery-lg9.jpg' %} " data-lightbox-gallery="gallery"><i
+                            class="fa fa-picture-o"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Portfolio Item End -->
+
+              <!-- Portfolio Item Start -->
+              <div class="gallery-item">
+                <div class="thumb">
+                  <img alt="project" src="{% static 'images/gallery/gallery-md10.jpg' %} " class="img-fullwidth">
+                  <div class="overlay-shade"></div>
+                  <div class="icons-holder">
+                    <div class="icons-holder-inner">
+                      <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                        <a href="{% static 'images/gallery/gallery-lg10.jpg' %} " data-lightbox-gallery="gallery"><i
+                            class="fa fa-picture-o"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Portfolio Item End -->
+
+              <!-- Portfolio Item Start -->
+              <div class="gallery-item">
+                <div class="thumb">
+                  <img alt="project" src="{% static 'images/gallery/gallery-md11.jpg' %} " class="img-fullwidth">
+                  <div class="overlay-shade"></div>
+                  <div class="icons-holder">
+                    <div class="icons-holder-inner">
+                      <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                        <a href="{% static 'images/gallery/gallery-lg11.jpg' %} " data-lightbox-gallery="gallery"><i
+                            class="fa fa-picture-o"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Portfolio Item End -->
+
+              <!-- Portfolio Item Start -->
+              <div class="gallery-item">
+                <div class="thumb">
+                  <img alt="project" src="{% static 'images/gallery/gallery-md12.jpg' %} " class="img-fullwidth">
+                  <div class="overlay-shade"></div>
+                  <div class="icons-holder">
+                    <div class="icons-holder-inner">
+                      <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                        <a href="{% static 'images/gallery/gallery-lg12.jpg' %} " data-lightbox-gallery="gallery"><i
+                            class="fa fa-picture-o"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Portfolio Item End -->
+            </div>
+            <!-- End Portfolio Gallery Grid -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: blog -->
+  <section id="blog">
+    <div class="container">
+      <div class="section-title text-center">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1" style="margin-left:115px;">
+            <h2 class="text-uppercase line-bottom-center mt-0">Our <span
+                class="text-theme-colored font-weight-600">Blog</span></h2>
+            <div class="title-icon">
+              <i class="flaticon-charity-hand-holding-a-heart"></i>
+            </div>
+            <p> your one-stop shop for all things integrative health, natural remedies, functional nutrition, and holistic self-care ideas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="section-content">
+        <div class="row">
+          {% for data in bloglist|slice:":3" %}
+            {% include 'blogs/components/homesingleBlog.html' with data=data %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider: Clients -->
+  <section class="clients bg-theme-colored">
+    <div class="container pt-0 pb-0">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Section: Clients -->
+          <div class="owl-carousel-6col clients-logo transparent text-center">
+            <div class="item"> <a href="#"><img src="{% static 'images/clients/w1.png' %} " alt=""></a></div>
+            <div class="item"> <a href="#"><img src="{% static 'images/clients/w2.png' %} " alt=""></a></div>
+            <div class="item"> <a href="#"><img src="{% static 'images/clients/w3.png' %} " alt=""></a></div>
+            <div class="item"> <a href="#"><img src="{% static 'images/clients/w4.png' %} " alt=""></a></div>
+            <div class="item"> <a href="#"><img src="{% static 'images/clients/w5.png' %} " alt=""></a></div>
+            <div class="item"> <a href="#"><img src="{% static 'images/clients/w6.png' %} " alt=""></a></div>
+            <div class="item"> <a href="#"><img src="{% static 'images/clients/w3.png' %} " alt=""></a></div>
+            <div class="item"> <a href="#"><img src="{% static 'images/clients/w4.png' %} " alt=""></a></div>
+            <div class="item"> <a href="#"><img src="{% static 'images/clients/w5.png' %} " alt=""></a></div>
+            <div class="item"> <a href="#"><img src="{% static 'images/clients/w6.png' %} " alt=""></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- end main-content -->
+{% endblock %}

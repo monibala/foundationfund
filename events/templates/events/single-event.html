@@ -1,0 +1,329 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block body %}
+   <!-- Start main-content -->
+ <div class="main-content">
+    <!-- Section: inner-header -->
+    <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="{% static "images/bg/bg1.jpg" %}">
+     <div class="container pt-100 pb-50">
+      <!-- Section Content -->
+      <div class="section-content pt-100">
+       <div class="row">
+        <div class="col-md-12">
+         <h3 class="title text-white">
+          Events / {{event.title}}
+         </h3>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section>
+     <div class="container">
+      <div class="row">
+       <div class="col-md-8">
+        <h2 class="text-theme-colored">
+         {{event.title}}
+        </h2>
+        <div class="owl-carousel-1col" data-nav="true">
+         <div class="item">
+          <img alt="" src="{{event.img.url}}"/>
+         </div>
+         {% for data in event.eventImg.all %}
+         <div class="item">
+          <img alt="" src="{{event.img.url}}"/>
+         </div>
+         {% endfor %}
+        </div>
+       </div>
+       <div class="col-md-4 mt-60">
+        <ul>
+         <li>
+          <h4>
+           Topics:
+          </h4>
+          <p>
+          {{event.topics}}
+          </p>
+         </li>
+         <li>
+          <h4>
+           Host:
+          </h4>
+          <p>
+           {{event.host}}
+          </p>
+         </li>
+         <li>
+          <h4>
+           Location:
+          </h4>
+          <p>
+           {{event.address}} , {{event.state}} ,{{event.zip}} ,{{event.country}}
+          </p>
+         </li>
+         <li>
+          <h4>
+           Start Date:
+          </h4>
+          <p>
+           {{event.eventTime|date}}
+          </p>
+         </li>
+         <li>
+          <h4>
+           End Date:
+          </h4>
+          <p>
+           {{event.eventEndTime|date}}
+          </p>
+         </li>
+        
+         <li>
+          <h5>
+           Share:
+          </h5>
+          <div class="styled-icons icon-dark icon-theme-colored icon-sm icon-circled">
+           <a href="#">
+            <i class="fa fa-facebook">
+            </i>
+           </a>
+           <a href="#">
+            <i class="fa fa-twitter">
+            </i>
+           </a>
+           <a href="#">
+            <i class="fa fa-instagram">
+            </i>
+           </a>
+           <a href="#">
+            <i class="fa fa-google-plus">
+            </i>
+           </a>
+          </div>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="row mt-60">
+       <div class="col-md-6">
+        <h3 class="mt-0 text-theme-colored">
+         Event Description
+        </h3>
+        <p>
+         {{ event.content|safe }}
+        </p>
+       </div>
+       <div class="col-md-6">
+        <blockquote class="bg-theme-colored">
+         <p class="text-white">
+         {{event.shortDes}}
+         </p>
+        
+        </blockquote>
+       </div>
+      </div>
+      {% comment %} <div class="row">
+       <div class="col-md-12">
+        <h3 class="text-theme-colored mb-30">
+         Keynote Speakers
+        </h3>
+       </div>
+      </div> {% endcomment %}
+      {% comment %} <div class="row">
+       <div class="col-sm-6 col-md-3 col-lg-3 pb-sm-30">
+        <div class="team-member">
+         <div class="volunteer-thumb">
+          <img alt="" class="img-fullwidth img-responsive" src=" {% static 'images/team/5.jpg' %} "/>
+         </div>
+         <div class="bg-lighter text-center pt-20 pb-20">
+          <div class="member-biography">
+           <h3 class="mt-0">
+            <a class="text-theme-colored" href="#">
+             Sakib John
+            </a>
+           </h3>
+          </div>
+          <ul class="styled-icons icon-theme-colored icon-circled icon-dark icon-sm mt-15">
+           <li>
+            <a href="#">
+             <i class="fa fa-facebook">
+             </i>
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-twitter">
+             </i>
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-google-plus">
+             </i>
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-skype">
+             </i>
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="col-sm-6 col-md-3 col-lg-3 pb-sm-30">
+        <div class="team-member">
+         <div class="volunteer-thumb">
+          <img alt="" class="img-fullwidth img-responsive" src=" {% static 'images/team/6.jpg' %} "/>
+         </div>
+         <div class="bg-lighter text-center pt-20 pb-20">
+          <div class="member-biography">
+           <h3 class="mt-0">
+            <a class="text-theme-colored" href="#">
+             Fiona John
+            </a>
+           </h3>
+          </div>
+          <ul class="styled-icons icon-theme-colored icon-circled icon-dark icon-sm mt-15">
+           <li>
+            <a href="#">
+             <i class="fa fa-facebook">
+             </i>
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-twitter">
+             </i>
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-google-plus">
+             </i>
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-skype">
+             </i>
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="col-sm-6 col-md-3 col-lg-3 pb-sm-30">
+        <div class="team-member">
+         <div class="volunteer-thumb">
+          <img alt="" class="img-fullwidth img-responsive" src=" {% static 'images/team/7.jpg' %} "/>
+         </div>
+         <div class="bg-lighter text-center pt-20 pb-20">
+          <div class="member-biography">
+           <h3 class="mt-0">
+            <a class="text-theme-colored" href="#">
+             Ismail Smith
+            </a>
+           </h3>
+          </div>
+          <ul class="styled-icons icon-theme-colored icon-circled icon-dark icon-sm mt-15">
+           <li>
+            <a href="#">
+             <i class="fa fa-facebook">
+             </i>
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-twitter">
+             </i>
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-google-plus">
+             </i>
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-skype">
+             </i>
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="col-sm-6 col-md-3 col-lg-3 pb-sm-30">
+        <div class="team-member">
+         <div class="volunteer-thumb">
+          <img alt="" class="img-fullwidth img-responsive" src=" {% static 'images/team/8.jpg' %} "/>
+         </div>
+         <div class="bg-lighter text-center pt-20 pb-20">
+          <div class="member-biography">
+           <h3 class="mt-0">
+            <a class="text-theme-colored" href="#">
+             Jerin Smith
+            </a>
+           </h3>
+          </div>
+          <ul class="styled-icons icon-theme-colored icon-circled icon-dark icon-sm mt-15">
+           <li>
+            <a href="#">
+             <i class="fa fa-facebook">
+             </i>
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-twitter">
+             </i>
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-google-plus">
+             </i>
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-skype">
+             </i>
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div> {% endcomment %}
+     </div>
+    </section>
+    <!-- Divider: Call To Action -->
+    <section class="bg-theme-colored">
+     <div class="container pt-0 pb-0">
+      <div class="row">
+       <div class="col-md-12">
+        <div class="call-to-action pt-30 pb-30">
+         <div class="col-md-9">
+          <h3 class="text-white">
+           Lets Change the world we all together, join us now as a volunteer
+          </h3>
+         </div>
+         <div class="col-md-3 text-right sm-text-center">
+          <a class="btn btn-transparent btn-border btn-circled btn-lg mt-15  ajaxload-popup" href="{% static 'ajax-load/volunteer-apply-form' %}">
+           Become a Volunteer
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div>
+   <!-- end main-content -->
+   <!-- Footer -->
+{% endblock %}

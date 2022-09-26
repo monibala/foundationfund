@@ -1,0 +1,194 @@
+{% load static %}
+
+<style>
+  /*Top Header*/
+.top-header{
+    background-color: #f8b864;
+    padding-top:2px;
+    padding-left: 0px;
+    /* padding: 2px 0; */
+}
+.top-content-wrap ul li{
+    margin-right: 15px;
+    display: inline-block;
+}
+.top-content-wrap ul li a{
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+}
+.top-content-wrap ul li i{
+    color: #fff;
+    margin-right: 1px;
+}
+.top-content-wrap .right-info{
+    text-align: right;
+}
+.top-content-wrap .right-info i{
+    margin-right: -55px;
+    color: #fff;
+    line-height: 25px;
+    display: block;
+    font-size: 16px;
+    
+}
+.top-content-wrap .right-info li:last-child{
+    margin-right: 0;
+}
+
+</style>
+<!-- preloader -->
+
+<!-- Header -->
+ <header class="header"> 
+  <div class="header-top bg-theme-colored sm-text-center"> 
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="widget no-border m-0">
+            <ul class="styled-icons icon-dark icon-theme-colored icon-sm sm-text-center">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-8" style="margin-left: -20px;">
+          <div class="widget no-border m-0">
+            <ul class="list-inline pull-right flip sm-pull-none sm-text-center mt-5">
+              <li class="m-0 p1-10 pr-10" style="display: inline-block;padding:2px;"><a class="text-white"
+                href="tel:{{info.phone}}"> <i class="fa fa-phone text-white"></i> {{info.phone}}</a> </li>&nbsp;
+              <li class="text-white m-0 p1-10 pr-10" style="display: inline-block;"> <i class="fa fa-clock-o text-white"></i> {{OpeningHour.0.day}}
+                {{OpeningHour.0.time}}
+              </li>&nbsp;
+              <li class="m-0 p1-10 pr-10" style="display: inline-block;"><a class="text-white"
+                href="mailto:{{info.email}}"> <i class="fa fa-envelope-o text-white"></i> {{info.email}}</a> </li>&nbsp;
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="widget no-border m-0">
+            <ul class="list-inline pull-right flip sm-pull-none sm-text-center mt-5">
+              <li class="mt-sm-10 mb-sm-10" style="display: inline-block;"> 
+                <!-- Modal: Appointment Starts -->
+                <a class="btn btn-default btn-flat btn-xs bg-light p-5 font-11 pl-10 pr-10 ajaxload-popup"
+                  href="{% static 'ajax-load/donation-form.html' %} ">Donate Now</a>
+              </li>&nbsp;&nbsp;
+              <li class="mt-sm-10 mb-sm-10" style="display: inline-block;">
+                <a class="btn btn-default btn-flat btn-xs bg-light p-5 font-11 pl-10 pr-10 ajaxload-popup"
+                  href="{% static 'ajax-load/volunteer-apply-form' %} ">Join Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+ 
+  <div class="header-nav">
+    <div class="header-nav-wrapper navbar-scrolltofixed bg-silver-light">
+      <div class="container">
+        <nav id="menuzord-right" class="menuzord default no-bg">
+          <a class="menuzord-brand pull-left flip" href="/"><img
+              src="{{info.logo.url}}" alt=""></a>
+          <ul class="menuzord-menu">
+            {% url 'index' as indexurl %}
+            <li class="{% if indexurl == request.path %}active{% endif %}"><a href="{{indexurl}} ">Home</a>
+            </li>
+            {% url 'about' as abouturl %}
+            {% url 'volunteer' as volunteerurl %}
+            {% url 'job' as joburl %}
+
+            <li
+              class="{% if abouturl == request.path or volunteerurl == request.path or joburl == request.path  %}active{% endif %}">
+              <a href="#">About us</a>
+              <ul class="dropdown">
+                <li><a href="{{abouturl}}"> About </a></li>
+                <li><a href="{{volunteerurl}}"> Volunteer </a></li>
+                <li><a href="{{joburl}} "> Job </a></li>
+              </ul>
+            </li>
+            {% url 'gallary' as gallaryurl %}
+            <li class="{% if gallaryurl == request.path %}active{% endif %}"><a href="{{gallaryurl}}">Gallary</a>
+
+            </li>
+            {% url 'events' as eventsurl %}
+            <li class="{% if eventsurl == request.path %}active{% endif %}"><a href="{{eventsurl}}">Events</a>
+
+            </li>
+            {% url 'blogs' as blogsurl %}
+            {% url 'news' as newsurl %}
+            <li class="{% if blogsurl == request.path %}active{% endif %}"><a href="">Blog</a>
+              <ul class="dropdown">
+                <li><a href="{{blogsurl}}"> Blog </a></li>
+                <li><a href="{{newsurl}}"> News </a></li>
+
+              </ul>
+            </li>
+            {% url 'couses' as cousesurl %}
+            <li class="{% if cousesurl == request.path %}active{% endif %}"><a href="{{cousesurl}}">Couses</a>
+            </li>
+            <li><a href="#">Mega Menu</a>
+              <div class="megamenu">
+                <div class="megamenu-row">
+                  <div class="col3">
+                    <ul class="list-unstyled list-dashed">
+                      <li>
+                        <h5 class="pl-10"><strong>Quick Links:</strong></h5>
+                      </li>
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">Donor Privacy Policy</a></li>
+                      <li><a href="#">Disclaimer</a></li>
+                      <li><a href="#">Terms of Use</a></li>
+                      <li><a href="#">Copyright Notice</a></li>
+                      <li><a href="#">Media Center</a></li>
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">Donor Privacy Policy</a></li>
+                    </ul>
+                  </div>
+                  <div class="col5">
+                    <h5 class=""><strong>Featured News:</strong></h5>
+                    <article class="post clearfix">
+                      <div class="entry-header">
+                        <div class="post-thumb"> <img class="img-fullwidth"
+                            src="{{latestnews.0.img.url}} " alt=""> </div>
+                      </div>
+                      <div class="post-details">
+                        <h4 class="entry-title mt-10"><a href="#">{{latestnews.0.title}}</a></h4>
+                        <p class="">{{latestnews.0.shortDes}}<a class="text-theme-colored" href="{% url 'singlenews' latestnews.0.slug %}">
+                            read more →</a> </p>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col4">
+                    <h5 class=""><strong>Latest News:</strong></h5>
+                    <div class="list-dashed">
+                      {% for data in latestnews %}
+                      <article class="post media-post clearfix pb-0 mb-10"> <a href="{% url 'singlenews' data.slug %}" class="post-thumb">
+                          <img alt="" src="{{data.img.url}}" style="
+                                                                  width: 66px;
+                                                                  height: 66px;
+                                                                  object-fit: contain;" />
+                        </a>
+                        <div class="post-right">
+                          <h5 class="post-title mt-0"><a href="{% url 'singlenews' data.slug %}">{{data.title}}</a></h5>
+                          <p>{{data.time|date}}</p>
+                        </div>
+                      </article>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            {% comment %} {% url 'shop' as shopurl %}
+            <li class="{% if shopurl == request.path %}active{% endif %}"><a href="{{shopurl}}">shop</a>
+
+            </li> {% endcomment %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

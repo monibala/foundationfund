@@ -1,0 +1,58 @@
+{% load static %}
+{% load custumfilter %}
+<div class="causes bg-white border-1px border-bottom-theme-color-1px clearfix mb-30">
+    <div class="col-md-5 col-lg-5 p-0">
+        <div class="thumb">
+            <img alt="" class="img-fullwidth" src="{{data.img.url}}" />
+            <div class="overlay-donate-now">
+                <a class="btn btn-dark btn-theme-colored btn-flat btn-sm pull-left mt-10"
+                    href="">
+                    Donate
+                    <i class="flaticon-charity-make-a-donation font-16 ml-5">
+                    </i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7 col-lg-7 p-0">
+        <div class="causes clearfix p-20 pt-15">
+            <h3 class="mt-0">
+                <a class="text-theme-colored" href="{% url "singlecouse" data.slug %}">
+                   {{data.title}}
+                </a>
+            </h3>
+            <p class="pt-0">
+                {{data.subtitle}}
+            </p>
+            <div class="progress-item mt-0">
+                <div class="progress mb-0">
+                    <div class="progress-bar" data-percent="{{data.target|getpercent:data.raised}}">
+                        <span class="percent">
+                            0
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="course-details-bottom mt-15">
+                <ul class="list-inline project-conditions mt-30 bg-theme-colored-transparent-1 text-center m-0 p-10">
+                    <li class="target-fund text-theme-colored">
+                        <strong>
+                            {{data.target}}
+                        </strong>
+                        Target
+                    </li>
+                    <li class="day text-theme-colored">
+                        <i class="flaticon-charity-hand-holding-a-heart font-30">
+                        </i>
+                    </li>
+                    <li class="raised text-theme-colored">
+                        <strong>
+                            ${{data.raised}}
+                        </strong>
+                        Raised
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

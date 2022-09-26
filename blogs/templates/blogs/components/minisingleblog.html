@@ -1,0 +1,7 @@
+<article class="post media-post clearfix pb-0 mb-10">
+    <a href="{% url 'singlenews' data.slug %}" class="post-thumb"><img alt="" src="{{data.img.url}}" width='90px' height="55px"></a>
+    <div class="post-right">
+        <h5 class="post-title mt-0 mb-5"><a href="{% url "single"|add:data.type|lower data.slug %}">{{data.title}}</a></h5>
+        <p class="post-date mb-0 font-12">{{data.time|date}}</p>
+    </div>
+</article>

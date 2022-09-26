@@ -1,0 +1,153 @@
+<section class="">
+ <div class="container" style="max-width: 700px;">
+  <h3 class="bg-theme-colored p-15 mb-0 text-white">
+   Become a Volunteer
+  </h3>
+  <div class="section-content bg-white p-30">
+   <div class="row">
+    <div class="col-md-12">
+     <form action="/about/become-volunteer/" enctype="multipart/form-data" id="volunteer_apply_form" method="post" name="job_apply_form">
+      <div class="row">
+       <div class="col-sm-6">
+        <div class="form-group">
+         <label for="form_name">
+          Name
+          <small>
+           *
+          </small>
+         </label>
+         <input class="form-control" id="form_name" name="name" placeholder="Enter Name" required="" type="text"/>
+        </div>
+       </div>
+       <div class="col-sm-6">
+        <div class="form-group">
+         <label for="form_email">
+          Email
+          <small>
+           *
+          </small>
+         </label>
+         <input class="form-control required email" id="form_email" name="email" placeholder="Enter Email" type="email"/>
+        </div>
+       </div>
+      </div>
+      <div class="row">
+       <div class="col-sm-6">
+        <div class="form-group">
+         <label for="form_sex">
+          Sex
+          <small>
+           *
+          </small>
+         </label>
+         <select class="form-control required" id="form_sex" name="gender">
+          <option value="Male">
+           Male
+          </option>
+          <option value="Female">
+           Female
+          </option>
+         </select>
+        </div>
+       </div>
+       <div class="col-sm-6">
+        <div class="form-group">
+         <label for="form_branch">
+          Choose Branch
+          <small>
+           *
+          </small>
+         </label>
+         <select class="form-control required" id="form_branch" name="branch">
+          <option value="UK">
+           UK
+          </option>
+          <option value="USA">
+           USA
+          </option>
+          <option value="Australia">
+           Australia
+          </option>
+         </select>
+        </div>
+       </div>
+      </div>
+      <div class="form-group">
+       <label for="form_message">
+        Message
+        <small>
+         *
+        </small>
+       </label>
+       <textarea class="form-control required" id="form_message" name="message" placeholder="Your cover letter/message sent to the employer" rows="5"></textarea>
+      </div>
+      <div class="form-group">
+       <label for="form_attachment">
+        C/V Upload
+       </label>
+       <input class="file" data-show-caption="true" data-show-upload="false" id="form_attachment" multiple="" name="resume" type="file"/>
+       <small>
+        Maximum upload file size: 12 MB
+       </small>
+      </div>
+      <div class="form-group">
+       <input class="form-control" id="form_botcheck" name="botcheck" type="hidden" value="">
+        <button class="btn btn-block btn-dark btn-theme-colored btn-sm mt-20 pt-10 pb-10" data-loading-text="Please wait..." type="submit">
+         Apply Now
+        </button>
+       </input>
+      </div>
+     </form>
+     <!-- Job Form Validation-->
+     <script type="text/javascript">
+      $("#volunteer_apply_form").validate({
+
+              submitHandler: function(form) {
+
+                var form_btn = $(form).find('button[type="submit"]');
+
+                var form_result_div = '#form-result';
+
+                $(form_result_div).remove();
+
+                form_btn.before('<div id="form-result"  role="alert" style="display: none;"></div>');
+
+                var form_btn_old_msg = form_btn.html();
+
+                form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+
+                $(form).ajaxSubmit({
+
+                  dataType:  'json',
+
+                  success: function(data) {
+
+                    if( data.status == true ) {
+                      $(form_result_div).addClass('alert alert-success');
+                      
+                      $(form).find('.form-control').val('');
+
+                    }else{
+                      $(form_result_div).addClass('alert alert-danger');
+                    }
+
+                    form_btn.prop('disabled', false).html(form_btn_old_msg);
+
+                    $(form_result_div).html(data.message).fadeIn('slow');
+
+                    setTimeout(function(){ $(form_result_div).fadeOut('slow')
+                    }, 6000);
+
+                  }
+
+                });
+
+              }
+
+            });
+     </script>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>

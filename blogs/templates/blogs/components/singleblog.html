@@ -1,0 +1,49 @@
+ {% load static %}
+ <article class="post clearfix mb-30 bg-lighter">
+     <div class="entry-header">
+         <div class="post-thumb thumb">
+             <img alt="" class="img-responsive img-fullwidth" src="{{data.img.url}}"  />
+         </div>
+     </div>
+     <div class="entry-content p-20 pr-10">
+         <div class="entry-meta media mt-0 no-bg no-border">
+             <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
+                 <ul>
+                     <li class="font-16 text-white font-weight-600">
+                         {{data.time|date:"d"}}
+                     </li>
+                     <li class="font-12 text-white text-uppercase">
+                         {{data.time|date:"M"}}
+                     </li>
+                 </ul>
+             </div>
+             <div class="media-body pl-15">
+                 <div class="event-content pull-left flip">
+                     <h4 class="entry-title text-white text-uppercase m-0 mt-5">
+                         <a href="{% url "single"|add:data.type|lower data.slug %}">
+                             {{data.title}}
+                         </a>
+                     </h4>
+                     <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                         <i class="fa fa-commenting-o mr-5 text-theme-colored">
+                         </i>
+                         214 Comments
+                     </span>
+                     <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                         <i class="fa fa-heart-o mr-5 text-theme-colored">
+                         </i>
+                         895 Likes
+                     </span>
+                 </div>
+             </div>
+         </div>
+         <p class="mt-10">
+           {{data.shortDes}}
+         </p>
+         <a class="btn-read-more" href="{% url "single"|add:data.type|lower data.slug %}">
+             Read more
+         </a>
+         <div class="clearfix">
+         </div>
+     </div>
+ </article>

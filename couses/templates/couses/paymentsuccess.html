@@ -1,0 +1,65 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block body %}
+
+<section class="bg-lightest fullscreen" id="home">
+    <div class="display-table text-center">
+        <div class="display-table-cell">
+            <div class="container pt-0 pb-0">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <h1 class="text-theme-colored font-weight-300 font-64">
+                            <i class="fa fa-check-circle"></i><br>
+                            Thanks
+                        </h1>
+                        <div class="ClassyCountdownDemo" id="countdown17">
+                        </div>
+
+                        <p class="font-20">
+
+
+                            <br />
+                            Your donation of {{response.a}}{{response.ammount}}  {{response.mc_currency}}{{response.currency}} has been processed</br>
+                            100% of your money will fund use for People in Need
+                        </p> 
+                        <p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% comment %} <script>
+function cheackemail(){
+let res = false
+    var xhttp = new XMLHttpRequest 
+    xhttp.open('GET','{% url "getpaypalstatus" %}',true)
+    xhttp.send()
+    xhttp.onreadystatechange = function(){
+    if(xhttp.readyState==4 && xhttp.status==200){
+        console.log(xhttp.response)
+        clearInterval(myInterval);
+    }
+  }
+}
+function addMinutes(date, minutes) {
+    return new Date(date.getTime() + minutes*60000);
+}
+function addMinutes(date, minutes) {
+    return new Date(date.getTime() + minutes*60000);
+}
+var today = new Date();
+var date = today.getDay() + "/" + today.getMonth() + "/" + today.getFullYear() +' '+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var newday = addMinutes(date,1)
+
+
+function everyTime() {
+    cheackemail()
+}
+
+var myInterval = setInterval(everyTime, 3000);
+
+</script> {% endcomment %}
+{% endblock %}
