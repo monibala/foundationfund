@@ -1,0 +1,408 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block body %}
+<!-- Start main-content -->
+<div class="main-content">
+  <!-- Section: inner-header -->
+  <section class="inner-header divider parallax layer-overlay overlay-dark-5"
+    data-bg-img="{% static 'images/bg/bg1.jpg' %}">
+    <div class="container pt-100 pb-50">
+      <!-- Section Content -->
+      <div class="section-content pt-100">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="title text-white">
+              {{blogob.title}}
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Blog -->
+  <section>
+    <div class="container mt-30 mb-30 pt-30 pb-30">
+      <div class="row">
+        <div class="col-md-9 slide">
+          <div class="blog-posts single-post">
+            <article class="post clearfix mb-0">
+              <div class="entry-header">
+                <div class="post-thumb thumb">
+                  <img alt="" class="img-responsive img-fullwidth" src="{{blogob.img.url}} " />
+                </div>
+              </div>
+              <div class="entry-content">
+                <div class="entry-meta media no-bg no-border mt-15 pb-20">
+                  <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
+                    <ul>
+                      <li class="font-16 text-white font-weight-600">
+                        {{blogob.time|date:"d"}}
+
+                      </li>
+                      <li class="font-12 text-white text-uppercase">
+                        {{blogob.time|date:"M"}}
+
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="media-body pl-15">
+                    <div class="event-content pull-left flip">
+                      <h4 class="entry-title text-white text-uppercase m-0">
+                        <a href="#">
+                          {{blogon.title}}
+                        </a>
+                      </h4>
+                      <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                        <i class="fa fa-commenting-o mr-5 text-theme-colored">
+                        </i>
+                        214 Comments
+                      </span>
+                      <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                        <i class="fa fa-heart-o mr-5 text-theme-colored">
+                        </i>
+                        895 Likes
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                {{blogob.content|safe}}
+                <div class="mt-30 mb-0">
+                  <h5 class="pull-left mt-10 mr-20 text-theme-colored">
+                    Share:
+                  </h5>
+                  <ul class="styled-icons icon-circled m-0">
+                    <li>
+                      <a data-bg-color="#3A5795" href="#">
+                        <i class="fa fa-facebook text-white">
+                        </i>
+                      </a>
+                    </li>
+                    <li>
+                      <a data-bg-color="#55ACEE" href="#">
+                        <i class="fa fa-twitter text-white">
+                        </i>
+                      </a>
+                    </li>
+                    <li>
+                      <a data-bg-color="#A11312" href="#">
+                        <i class="fa fa-google-plus text-white">
+                        </i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+            <div class="tagline p-0 pt-20 mt-5">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="tags">
+                    <p class="mb-0">
+                      <i class="fa fa-tags text-theme-colored">
+                      </i>
+                      <span>
+                        Tags:
+                      </span>
+                      {% for data in blogob.tags.all %}{{data.tags|title}} , {% endfor %}
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="share text-right">
+                    <p>
+                      <i class="fa fa-share-alt text-theme-colored">
+                      </i>
+                      Share
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="author-details media-post">
+              <a class="post-thumb mb-0 pull-left flip pr-20" href="#">
+                <img alt="" class="img-thumbnail" src=" {% static 'images/blog/author.jpg' %} " />
+              </a>
+              <div class="post-right">
+                <h5 class="post-title mt-0 mb-0">
+                  <a class="font-18" href="#">
+                    John Doe
+                  </a>
+                </h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna et sed aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat.
+                </p>
+                <ul class="styled-icons square-sm m-0">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-facebook">
+                      </i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-twitter">
+                      </i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-google-plus">
+                      </i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="clearfix">
+              </div>
+            </div>
+            <div class="comments-area">
+              <h5 class="comments-title">
+                Comments
+              </h5>
+              <ul class="comment-list">
+                <li>
+                  <div class="media comment-author">
+                    <a class="media-left pull-left flip" href="#">
+                      <img alt="" class="img-thumbnail" src=" {% static 'images/blog/comment1.jpg' %} " />
+                    </a>
+                    <div class="media-body">
+                      <h5 class="media-heading comment-heading">
+                        John Doe says:
+                      </h5>
+                      <div class="comment-date">
+                        23/06/2014
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna et sed aliqua. Ut enim ea commodo consequat...
+                      </p>
+                      <a class="replay-icon pull-right text-theme-colored" href="#">
+                        <i class="fa fa-commenting-o text-theme-colored">
+                        </i>
+                        Replay
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="media comment-author">
+                    <a class="media-left pull-left flip" href="#">
+                      <img alt="" class="img-thumbnail" src=" {% static 'images/blog/comment2.jpg' %} " />
+                    </a>
+                    <div class="media-body">
+                      <h5 class="media-heading comment-heading">
+                        John Doe says:
+                      </h5>
+                      <div class="comment-date">
+                        23/06/2014
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna et sed aliqua. Ut enim ea commodo consequat...
+                      </p>
+                      <a class="replay-icon pull-right text-theme-colored" href="#">
+                        <i class="fa fa-commenting-o text-theme-colored">
+                        </i>
+                        Replay
+                      </a>
+                      <div class="clearfix">
+                      </div>
+                      <div class="media comment-author nested-comment">
+                        <a class="media-left pull-left flip pt-20" href="#">
+                          <img alt="" class="img-thumbnail" src=" {% static 'images/blog/comment3.jpg' %} " />
+                        </a>
+                        <div class="media-body p-20 bg-lighter">
+                          <h5 class="media-heading comment-heading">
+                            John Doe says:
+                          </h5>
+                          <div class="comment-date">
+                            23/06/2014
+                          </div>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna et sed aliqua. Ut enim ea commodo consequat...
+                          </p>
+                          <a class="replay-icon pull-right text-theme-colored" href="#">
+                            <i class="fa fa-commenting-o text-theme-colored">
+                            </i>
+                            Replay
+                          </a>
+                        </div>
+                      </div>
+                      <div class="media comment-author nested-comment">
+                        <a class="media-left pull-left flip pt-20" href="#">
+                          <img alt="" class="img-thumbnail" src=" {% static 'images/blog/comment1.jpg' %} " />
+                        </a>
+                        <div class="media-body p-20 bg-lighter">
+                          <h5 class="media-heading comment-heading">
+                            John Doe says:
+                          </h5>
+                          <div class="comment-date">
+                            23/06/2014
+                          </div>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna et sed aliqua. Ut enim ea commodo consequat...
+                          </p>
+                          <a class="replay-icon pull-right text-theme-colored" href="#">
+                            <i class="fa fa-commenting-o text-theme-colored">
+                            </i>
+                            Replay
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="media comment-author">
+                    <a class="media-left pull-left flip" href="#">
+                      <img alt="" class="img-thumbnail" src=" {% static 'images/blog/comment2.jpg' %} " />
+                    </a>
+                    <div class="media-body">
+                      <h5 class="media-heading comment-heading">
+                        John Doe says:
+                      </h5>
+                      <div class="comment-date">
+                        23/06/2014
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna et sed aliqua. Ut enim ea commodo consequat...
+                      </p>
+                      <a class="replay-icon pull-right text-theme-colored" href="#">
+                        <i class="fa fa-commenting-o text-theme-colored">
+                        </i>
+                        Replay
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="comment-box">
+              <div class="row">
+                <div class="col-sm-12">
+                  <h5>
+                    Leave a Comment
+                  </h5>
+                  <div class="row">
+                    <form id="comment-form" role="form">
+                      <div class="col-sm-6 pt-0 pb-0">
+                        <div class="form-group">
+                          <input class="form-control" id="contact_name" name="contact_name" placeholder="Enter Name"
+                            required="" type="text" />
+                        </div>
+                        <div class="form-group">
+                          <input class="form-control" id="contact_email2" name="contact_email2"
+                            placeholder="Enter Email" required="" type="text" />
+                        </div>
+                        <div class="form-group">
+                          <input class="form-control" name="subject" placeholder="Enter Website" required=""
+                            type="text" />
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <textarea class="form-control" id="contact_message2" name="contact_message2"
+                            placeholder="Enter Message" required="" rows="7"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <button class="btn btn-dark btn-flat pull-right m-0" data-loading-text="Please wait..."
+                            type="submit">
+                            Submit
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 slide">
+          <div class="sidebar sidebar-left mt-sm-30">
+            <div class="widget">
+              <h5 class="widget-title line-bottom">
+                Search box
+              </h5>
+              <div class="search-form">
+                <form>
+                  <div class="input-group">
+                    <input class="form-control search-input" placeholder="Click to Search" type="text" />
+                    <span class="input-group-btn">
+                      <button class="btn search-button" type="submit">
+                        <i class="fa fa-search">
+                        </i>
+                      </button>
+                    </span>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="widget">
+              <h5 class="widget-title line-bottom">
+                Categories
+              </h5>
+              <div class="categories">
+                <ul class="list list-border angle-double-right">
+                  {% for data in categories %}
+                  <li>
+                    <a href="{% url "cat"|add:type  data.slug %}">
+                      {{data.name|title}}
+                      <span>
+                        ({{data.Couses.all.count}})
+                      </span>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+            <div class="widget">
+              <h5 class="widget-title line-bottom">
+                Latest News
+              </h5>
+              <div class="latest-posts">
+                {% for data in latestnews|slice:":3" %}
+                {% include "blogs/components/sidebarsingleNews.html" with data=data %}
+                {% endfor %}
+              </div>
+            </div>
+            <div class="widget">
+              <h5 class="widget-title line-bottom">
+                Photos from Flickr
+              </h5>
+              <div class="clearfix" id="flickr-feed">
+                <!-- Flickr Link -->
+                <script
+                  src="http://www.flickr.com/badge_code_v2.gne?count=9&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=52617155@N08"
+                  type="text/javascript">
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- end main-content -->
+<!-- Footer -->
+{% endblock %}
+
+{% block css %}
+<style>
+  div.container.mt-30.mb-30.pt-30.pb-30 div.row div.slide {
+    max-height: 100vh;
+    overflow: scroll;
+  }
+
+  div.container.mt-30.mb-30.pt-30.pb-30 div.row div.slide::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+{% endblock %}

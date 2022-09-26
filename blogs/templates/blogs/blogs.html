@@ -1,0 +1,550 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block body %}
+   <div class="main-content">
+    <!-- Section: inner-header -->
+    <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="{% static 'images/bg/bg1.jpg' %}">
+     <div class="container pt-100 pb-50">
+      <!-- Section Content -->
+      <div class="section-content pt-100">
+       <div class="row">
+        <div class="col-md-12">
+         <h3 class="title text-white">
+          {{title}}
+         </h3>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section>
+     <div class="container mt-30 mb-30 pt-30 pb-30">
+      <div class="row">
+       <div class="col-md-9 slide">
+        <div class="blog-posts">
+         <div class="col-md-12">
+          <div class="row list-dashed"> 
+          {% for data in page_obj %}
+          {% include 'blogs/components/singleblog.html' with data=data %}
+           {% endfor %}
+           {% comment %} <article class="post clearfix mb-30 bg-lighter">
+            <div class="entry-header">
+             <div class="post-thumb thumb">
+              <img alt="" class="img-responsive img-fullwidth" src="https://placehold.it/900x450"/>
+             </div>
+            </div>
+            <div class="entry-content p-20 pr-10">
+             <div class="entry-meta media mt-0 no-bg no-border">
+              <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
+               <ul>
+                <li class="font-16 text-white font-weight-600">
+                 28
+                </li>
+                <li class="font-12 text-white text-uppercase">
+                 Feb
+                </li>
+               </ul>
+              </div>
+              <div class="media-body pl-15">
+               <div class="event-content pull-left flip">
+                <h4 class="entry-title text-white text-uppercase m-0 mt-5">
+                 <a href="#">
+                  Text Post
+                 </a>
+                </h4>
+                <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                 <i class="fa fa-commenting-o mr-5 text-theme-colored">
+                 </i>
+                 214 Comments
+                </span>
+                <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                 <i class="fa fa-heart-o mr-5 text-theme-colored">
+                 </i>
+                 895 Likes
+                </span>
+               </div>
+              </div>
+             </div>
+             <p class="mt-10">
+              Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti, sint assumenda. Pariatur iste veritatis excepturi, ipsa optio nobis.
+             </p>
+             <a class="btn-read-more" href="{% url 'singleblog' 'slug' %}">
+              Read more
+             </a>
+             <div class="clearfix">
+             </div>
+            </div>
+           </article>
+           <article class="post clearfix mb-50 pb-30 bg-lighter">
+            <div class="entry-header">
+             <div class="post-thumb">
+              <iframe allowfullscreen="" height="205" src=" {% static '//player.vimeo.com/video/114959015?title=0&amp;byline=0&amp;portrait=0' %} " width="360">
+              </iframe>
+             </div>
+            </div>
+            <div class="entry-content p-20 pr-10">
+             <div class="entry-meta media mt-0 no-bg no-border">
+              <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
+               <ul>
+                <li class="font-16 text-white font-weight-600">
+                 28
+                </li>
+                <li class="font-12 text-white text-uppercase">
+                 Feb
+                </li>
+               </ul>
+              </div>
+              <div class="media-body pl-15">
+               <div class="event-content pull-left flip">
+                <h4 class="entry-title text-white text-uppercase m-0 mt-5">
+                 <a href="#">
+                  Vimeo Video Post
+                 </a>
+                </h4>
+                <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                 <i class="fa fa-commenting-o mr-5 text-theme-colored">
+                 </i>
+                 214 Comments
+                </span>
+                <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                 <i class="fa fa-heart-o mr-5 text-theme-colored">
+                 </i>
+                 895 Likes
+                </span>
+               </div>
+              </div>
+             </div>
+             <p class="mt-10">
+              Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti, sint assumenda. Pariatur iste veritatis excepturi, ipsa optio nobis.
+             </p>
+             <a class="btn-read-more" href="{% url 'singleblog' 'slug' %}">
+              Read more
+             </a>
+             <div class="clearfix">
+             </div>
+            </div>
+           </article>
+           <article class="post clearfix mb-50 pb-30 bg-lighter">
+            <div class="entry-header">
+             <div class="post-thumb">
+              <iframe allowfullscreen="" height="340" src="http://www.youtube.com/embed/oIDqz2BrVec?autoplay=0" width="600">
+              </iframe>
+             </div>
+            </div>
+            <div class="entry-content p-20 pr-10">
+             <div class="entry-meta media mt-0 no-bg no-border">
+              <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
+               <ul>
+                <li class="font-16 text-white font-weight-600">
+                 28
+                </li>
+                <li class="font-12 text-white text-uppercase">
+                 Feb
+                </li>
+               </ul>
+              </div>
+              <div class="media-body pl-15">
+               <div class="event-content pull-left flip">
+                <h4 class="entry-title text-white text-uppercase m-0 mt-5">
+                 <a href="#">
+                  Youtube Video Post
+                 </a>
+                </h4>
+                <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                 <i class="fa fa-commenting-o mr-5 text-theme-colored">
+                 </i>
+                 214 Comments
+                </span>
+                <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                 <i class="fa fa-heart-o mr-5 text-theme-colored">
+                 </i>
+                 895 Likes
+                </span>
+               </div>
+              </div>
+             </div>
+             <p class="mt-10">
+              Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti, sint assumenda. Pariatur iste veritatis excepturi, ipsa optio nobis.
+             </p>
+             <a class="btn-read-more" href="{% url 'singleblog' 'slug' %}">
+              Read more
+             </a>
+             <div class="clearfix">
+             </div>
+            </div>
+           </article>
+           <article class="post clearfix mb-50 pb-30 bg-lighter">
+            <div class="entry-header">
+             <div class="post-thumb">
+              <!-- Portfolio Gallery Grid -->
+              <div class="gallery-isotope grid-5 masonry gutter-small clearfix" data-lightbox="gallery">
+               <!-- Portfolio Item Start -->
+               <div class="gallery-item">
+                <a data-lightbox="gallery-item" href="http://placehold.it/400x300" title="Title Here 1">
+                 <img alt="" src="http://placehold.it/400x300"/>
+                </a>
+               </div>
+               <!-- Portfolio Item End -->
+               <!-- Portfolio Item Start -->
+               <div class="gallery-item wide">
+                <a data-lightbox="gallery-item" href="http://placehold.it/800x600" title="Title Here 2">
+                 <img alt="" src="http://placehold.it/800x600"/>
+                </a>
+               </div>
+               <!-- Portfolio Item End -->
+               <!-- Portfolio Item Start -->
+               <div class="gallery-item">
+                <a data-lightbox="gallery-item" href="http://placehold.it/400x300" title="Title Here 3">
+                 <img alt="" src="http://placehold.it/400x300"/>
+                </a>
+               </div>
+               <!-- Portfolio Item End -->
+               <!-- Portfolio Item Start -->
+               <div class="gallery-item">
+                <a data-lightbox="gallery-item" href="http://placehold.it/400x600" title="Title Here 4">
+                 <img alt="" src="http://placehold.it/400x600"/>
+                </a>
+               </div>
+               <!-- Portfolio Item End -->
+               <!-- Portfolio Item Start -->
+               <div class="gallery-item">
+                <a data-lightbox="gallery-item" href="http://placehold.it/400x600" title="Title Here 5">
+                 <img alt="" src="http://placehold.it/400x600"/>
+                </a>
+               </div>
+               <!-- Portfolio Item End -->
+               <!-- Portfolio Item Start -->
+               <div class="gallery-item">
+                <a data-lightbox="gallery-item" href="http://placehold.it/400x300" title="Title Here 6">
+                 <img alt="" src="http://placehold.it/400x300"/>
+                </a>
+               </div>
+               <!-- Portfolio Item End -->
+               <!-- Portfolio Item Start -->
+               <div class="gallery-item">
+                <a data-lightbox="gallery-item" href="http://placehold.it/400x300" title="Title Here 6">
+                 <img alt="" src="http://placehold.it/400x300"/>
+                </a>
+               </div>
+               <!-- Portfolio Item End -->
+               <!-- Portfolio Item Start -->
+               <div class="gallery-item">
+                <a data-lightbox="gallery-item" href="http://placehold.it/400x300" title="Title Here 6">
+                 <img alt="" src="http://placehold.it/400x300"/>
+                </a>
+               </div>
+               <!-- Portfolio Item End -->
+               <!-- Portfolio Item Start -->
+               <div class="gallery-item">
+                <a data-lightbox="gallery-item" href="http://placehold.it/400x300" title="Title Here 6">
+                 <img alt="" src="http://placehold.it/400x300"/>
+                </a>
+               </div>
+               <!-- Portfolio Item End -->
+               <!-- Portfolio Item Start -->
+               <div class="gallery-item">
+                <a data-lightbox="gallery-item" href="http://placehold.it/400x300" title="Title Here 6">
+                 <img alt="" src="http://placehold.it/400x300"/>
+                </a>
+               </div>
+               <!-- Portfolio Item End -->
+              </div>
+              <!-- End Portfolio Gallery Grid -->
+             </div>
+            </div>
+            <div class="clearfix">
+            </div>
+            <div class="entry-content p-20 pr-10">
+             <div class="entry-meta media mt-0 no-bg no-border">
+              <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
+               <ul>
+                <li class="font-16 text-white font-weight-600">
+                 28
+                </li>
+                <li class="font-12 text-white text-uppercase">
+                 Feb
+                </li>
+               </ul>
+              </div>
+              <div class="media-body pl-15">
+               <div class="event-content pull-left flip">
+                <h4 class="entry-title text-white text-uppercase m-0 mt-5">
+                 <a href="#">
+                  Gallery Post
+                 </a>
+                </h4>
+                <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                 <i class="fa fa-commenting-o mr-5 text-theme-colored">
+                 </i>
+                 214 Comments
+                </span>
+                <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                 <i class="fa fa-heart-o mr-5 text-theme-colored">
+                 </i>
+                 895 Likes
+                </span>
+               </div>
+              </div>
+             </div>
+             <p class="mt-10">
+              Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti, sint assumenda. Pariatur iste veritatis excepturi, ipsa optio nobis.
+             </p>
+             <a class="btn-read-more" href="{% url 'singleblog' 'slug' %}">
+              Read more
+             </a>
+             <div class="clearfix">
+             </div>
+            </div>
+           </article>
+           <article class="post clearfix mb-50 pb-30 bg-lighter">
+            <div class="entry-header">
+            </div>
+            <div class="clearfix">
+            </div>
+            <div class="entry-content p-20 pr-10">
+             <div class="entry-meta media mt-0 no-bg no-border">
+              <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
+               <ul>
+                <li class="font-16 text-white font-weight-600">
+                 28
+                </li>
+                <li class="font-12 text-white text-uppercase">
+                 Feb
+                </li>
+               </ul>
+              </div>
+              <div class="media-body pl-15">
+               <div class="event-content pull-left flip">
+                <h4 class="entry-title text-white text-uppercase m-0 mt-5">
+                 <a href="#">
+                  Quote Post
+                 </a>
+                </h4>
+                <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                 <i class="fa fa-commenting-o mr-5 text-theme-colored">
+                 </i>
+                 214 Comments
+                </span>
+                <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                 <i class="fa fa-heart-o mr-5 text-theme-colored">
+                 </i>
+                 895 Likes
+                </span>
+               </div>
+              </div>
+             </div>
+             <blockquote>
+              <p>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eligendi quibusdam doloremque necessitatibus doloribus blanditiis, praesentium ex error aliquid? Corporis dolores consequuntur cupiditate.
+              </p>
+              <footer>
+               Someone famous in
+               <cite title="Source Title">
+                Source Title
+               </cite>
+              </footer>
+             </blockquote>
+             <div class="clearfix">
+             </div>
+            </div>
+           </article>
+           <article class="post clearfix mb-50 pb-30 bg-lighter">
+            <div class="entry-header">
+             <div class="post-thumb">
+              <div class="owl-carousel-1col">
+               <div class="item">
+                <img alt="" src="https://placehold.it/900x500"/>
+               </div>
+               <div class="item">
+                <img alt="" src="https://placehold.it/900x500"/>
+               </div>
+               <div class="item">
+                <img alt="" src="https://placehold.it/900x500"/>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="clearfix">
+            </div>
+            <div class="entry-content p-20 pr-10">
+             <div class="entry-meta media mt-0 no-bg no-border">
+              <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
+               <ul>
+                <li class="font-16 text-white font-weight-600">
+                 28
+                </li>
+                <li class="font-12 text-white text-uppercase">
+                 Feb
+                </li>
+               </ul>
+              </div>
+              <div class="media-body pl-15">
+               <div class="event-content pull-left flip">
+                <h4 class="entry-title text-white text-uppercase m-0 mt-5">
+                 <a href="#">
+                  Images Carousel Post
+                 </a>
+                </h4>
+                <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                 <i class="fa fa-commenting-o mr-5 text-theme-colored">
+                 </i>
+                 214 Comments
+                </span>
+                <span class="mb-10 text-gray-darkgray mr-10 font-13">
+                 <i class="fa fa-heart-o mr-5 text-theme-colored">
+                 </i>
+                 895 Likes
+                </span>
+               </div>
+              </div>
+             </div>
+             <p class="mt-10">
+              Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti, sint assumenda. Pariatur iste veritatis excepturi, ipsa optio nobis.
+             </p>
+             <a class="btn-read-more" href="{% url 'singleblog' 'slug' %}">
+              Read more
+             </a>
+             <div class="clearfix">
+             </div>
+            </div>
+           </article>
+           <article class="post clearfix pb-30">
+            <div class="clearfix">
+            </div>
+            <div class="entry-content">
+             <a class="post-link text-center text-white bg-theme-colored display-block font-20 p-30" href="#">
+              kodesolution.com
+              <br/>
+              <span class="font-13">
+               http://kodesolution.com
+              </span>
+             </a>
+            </div>
+           </article> {% endcomment %}
+          </div>
+         </div>
+         <div class="col-md-12">
+           {% if page_obj.has_other_pages %}
+                    <nav>
+                        <ul class="pagination theme-colored">
+                            {% if page_obj.has_previous %}
+                            <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                            {% else %}
+                            <li class="disabled"><span>&laquo;</span></li>
+                            {% endif %}
+                            {% for i in page_obj.paginator.page_range %}
+                            {% if  forloop.counter == 1 and request.GET.page == none %}
+                            <li class="active"><a>{{i}} <span class="sr-only">(current)</span></a></li>
+                            {% elif  request.GET.page == i|slugify %}
+                            <li class="active"><a>{{i}} <span class="sr-only">(current)</span></a></li>
+                            {% else %}
+                            <li><a href="?page={{ i }}">{{ i }}</a></li>
+                            {% endif %}
+                            {% endfor %}
+                            {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                            {% else %}
+                            <li class="disabled"><span>&raquo;</span></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    {% endif %}
+         </div>
+        </div>
+       </div>
+       <div class="col-sm-12 col-md-3 slide">
+        <div class="sidebar sidebar-right mt-sm-30">
+         <div class="widget">
+          <h5 class="widget-title line-bottom">
+           Archives
+          </h5>
+          <ul class="list-divider list-border list check">
+           <li>
+            <a href="#">
+             Vehicle Accidents
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             Family Law
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             Personal Injury
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             Personal Injury
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             Case Investigation
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             Business Taxation
+            </a>
+           </li>
+          </ul>
+         </div>
+         {% if galleryimg %}
+         <div class="widget">
+          <h5 class="widget-title line-bottom">
+           Image gallery with text
+          </h5>
+          <div class="owl-carousel-1col">
+          {% for data in galleryimg %}
+           <div class="item">
+            <img alt="" src="https://placehold.it/365x230"/>
+            <h4 class="title">
+             This is a Demo Title
+            </h4>
+            <p>
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae illum amet illo.
+            </p>
+           </div>
+           {% endfor %}
+          </div>
+         </div>
+         {% endif %}
+         <div class="widget">
+          <h5 class="widget-title line-bottom">
+           Tags
+          </h5>
+          <div class="tags">
+          {% for data in tags %}
+            {% url 'tag'|add:type data.tags as tagurl %}
+           <a class="{% if tagurl == request.path %}active{% endif %}" href="{{tagurl}}">
+            {{data.tags}}
+           </a>
+           {% endfor %}
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div>
+{% endblock %}
+
+{% block css %}
+<style>
+
+a.active {
+    background: #f26522;
+    color: #fff;
+}
+div.container.mt-30.mb-30.pt-30.pb-30 div.row div.slide {
+    max-height: 100vh;
+    overflow: scroll;
+}
+div.container.mt-30.mb-30.pt-30.pb-30 div.row div.slide::-webkit-scrollbar {
+    display: none;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block body %}
+
+<section class="bg-lightest fullscreen" id="home">
+    <div class="display-table text-center">
+        <div class="display-table-cell">
+            <div class="container pt-0 pb-0">
+                <div class="row">
+                    {% if response.RESPCODE == "01" %}
+                    <div class="col-md-10 col-md-offset-1">
+                        <h1 class="text-theme-colored font-weight-300 font-64">
+                            <i class="fa fa-check-circle"></i><br>
+                            Thanks
+                        </h1>
+                        <div class="ClassyCountdownDemo" id="countdown17">
+                        </div>
+
+                        <p class="font-20">
+
+
+                            <br />
+                            Your donation of {{response.TXNAMOUNT}} {{response.CURRENCY}} has been processed</br>
+                            100% of your money will fund use for People in Need
+                        </p>
+                    </div>
+                    {% else %}
+                    <div class="col-md-10 col-md-offset-1">
+                        <h1 class="text-theme-colored font-weight-300 font-64">
+                            <span class="pe-7s-close-circle" style="color:red;"></span><br>
+                            Payment Failed
+                        </h1>
+                        <div class="ClassyCountdownDemo" id="countdown17">
+                        </div>
+
+                        <p class="font-20">
+
+
+                            <br />
+                            Your donation of {{response.TXNAMOUNT}} {{response.CURRENCY}} is failed because</br>
+                            {{response.RESPMSG}}
+                        </p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

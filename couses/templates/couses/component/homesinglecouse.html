@@ -1,0 +1,28 @@
+  {% load static %}
+  {% load custumfilter %}
+  <div class="item">
+      <div class="causes bg-white maxwidth500 mb-30">
+          <div class="thumb">
+              <img src="{{data.img.url}} " alt="" class="img-fullwidth" style="height: 312px; object-fit:cover;">
+          </div>
+          <div class="causes-details clearfix border-bottom p-15 pt-15 pb-15">
+              <ul class="list-inline font-20 font-weight-600 clearfix mb-5">
+                  <li class="pull-left font-weight-400 text-black-333 pr-0">Raised: <span
+                          class="text-theme-colored font-weight-700">${{data.raised}}</span></li>
+                  <li class="pull-right font-weight-400 text-black-333 pr-0">Goal: <span
+                          class="text-theme-colored font-weight-700">${{data.target}}</span></li>
+              </ul>
+              <h4 class="text-uppercase"><a href="{% static 'page-single-cause.html' %} ">{{data.title}}</a></h4>
+              <div class="progress-item mt-0">
+                  <div class="progress mb-0">
+                      <div data-percent="{{data.target|getpercent:data.raised}}" class="progress-bar"><span class="percent">0</span></div>
+                  </div>
+              </div>
+              <p class="mt-20">{{data.subtitle}}</p>
+              <a href="{% static 'page-donate.html' %} "
+                  class="btn btn-default btn-theme-colored btn-xs font-16 mt-10"><i
+                      class="flaticon-charity-make-a-donation font-16 ml-5"></i> Donate <i
+                      class="flaticon-charity-make-a-donation font-16 ml-5"></i></a>
+          </div>
+      </div>
+  </div>

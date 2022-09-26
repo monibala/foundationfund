@@ -1,0 +1,142 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block body %}
+<!-- Start main-content -->
+<div class="main-content">
+    <!-- Section: inner-header -->
+    <section class="inner-header divider parallax layer-overlay overlay-dark-5"
+        data-bg-img="{% static "images/bg/bg1.jpg" %}">
+        <div class="container pt-100 pb-50">
+            <!-- Section Content -->
+            <div class="section-content pt-100">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="title text-white">
+                            {{title|title}}
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section: Causes -->
+    <section>
+        <div class="container pb-30">
+            <div class="section-content">
+                <div class="row multi-row-clearfix">
+                    <div class="col-sm-6 col-md-9 slide">
+                        {% for data in page_obj %}
+                        {% include 'couses/component/singlecouseslist.html' with data=data %}
+                        {% endfor %}
+                        <div class="col-md-12">
+                            {% if page_obj.has_other_pages %}
+                            <nav>
+                                <ul class="pagination theme-colored">
+                                    {% if page_obj.has_previous %}
+                                    <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                                    {% else %}
+                                    <li class="disabled"><span>&laquo;</span></li>
+                                    {% endif %}
+                                    {% for i in page_obj.paginator.page_range %}
+                                    {% if  forloop.counter == 1 and request.GET.page == none %}
+                                    <li class="active"><a>{{i}} <span class="sr-only">(current)</span></a></li>
+                                    {% elif  request.GET.page == i|slugify %}
+                                    <li class="active"><a>{{i}} <span class="sr-only">(current)</span></a></li>
+                                    {% else %}
+                                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% if page_obj.has_next %}
+                                    <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                                    {% else %}
+                                    <li class="disabled"><span>&raquo;</span></li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-3 slide">
+                        <div class="sidebar sidebar-left mt-sm-30">
+                            <div class="widget">
+                                <h4 class="widget-title line-bottom">
+                                    Search box
+                                </h4>
+                                <div class="search-form">
+                                    <form>
+                                        <div class="input-group">
+                                            <input class="form-control search-input" placeholder="Click to Search"
+                                                type="text" />
+                                            <span class="input-group-btn">
+                                                <button class="btn search-button" type="submit">
+                                                    <i class="fa fa-search">
+                                                    </i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="widget">
+                                <h4 class="widget-title line-bottom">
+                                    Categories
+                                </h4>
+                                <div class="categories">
+                                    <ul class="list list-border angle-double-right">
+                                        {% for data in categories %}
+                                        <li>
+                                            <a href="{% url 'catcouses' data.slug %}">
+                                                {{data.name|title}}
+                                                <span>
+                                                    ({{data.Couses.all.count}})
+                                                </span>
+                                            </a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="widget">
+                                <h4 class="widget-title line-bottom">
+                                    Latest News
+                                </h4>
+                                <div class="latest-posts">
+                                {% for data in latestnews|slice:":3" %}
+                                    {% include "blogs/components/sidebarsingleNews.html" with data=data %}
+                                {% endfor %}
+                                </div>
+                            </div>
+                            <div class="widget">
+                                <h4 class="widget-title line-bottom">
+                                    Photos from Flickr
+                                </h4>
+                                <div class="clearfix" id="flickr-feed">
+                                    <!-- Flickr Link -->
+                                    <script
+                                        src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=52617155@N08"
+                                        type="text/javascript">
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- end main-content -->
+{% endblock %}
+
+{% block css %}
+<style>
+    div.section-content div.row div.slide {
+        max-height: 150vh;
+        overflow: scroll;
+    }
+
+    div.section-content div.row div.slide::-webkit-scrollbar {
+        display: none;
+    }
+</style>
+{% endblock %}

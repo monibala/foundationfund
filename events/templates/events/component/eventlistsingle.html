@@ -1,0 +1,50 @@
+ {% load static %}
+ {% for data in events %}
+        <div class="{{classname}}">
+               <div class="schedule-box maxwidth500 bg-lighter mb-30">
+                      <div class="thumb">
+                             <img alt="" class="img-fullwidth" src="{{ data.img.url }}" />
+                      </div>
+                      <div class="schedule-details border-bottom-theme-color-2px clearfix p-15 pt-10">
+                             <div class="text-center pull-left flip bg-theme-colored p-10 pt-5 pb-5 mr-10">
+                                    <ul>
+                                           <li class="font-19 text-white font-weight-600 border-bottom">
+                                                  {{data.eventTime|date:'d'}}
+                                           </li>
+                                           <li class="font-12 text-white text-uppercase">
+                                                  {{data.eventTime|date:'M'}}
+                                           </li>
+                                    </ul>
+                             </div>
+                             <h4 class="title mt-5 mb-5">
+                                    <a href="#">
+                                           {{data.title}}
+                                    </a>
+                             </h4>
+                             <ul class="list-inline font-11 text-gray">
+                                    <li>
+                                           <i class="fa fa-calendar mr-5">
+                                           </i>
+                                          {{data.eventTime|date:'D'}}, {{data.eventTime|time}}
+                                    </li>
+                                    <li>
+                                           <i class="fa fa-map-marker mr-5">
+                                           </i>
+                                           {{data.state}}
+                                    </li>
+                             </ul>
+                             <div class="clearfix">
+                             </div>
+                             <p class="mt-10">
+                                    {{data.shortDes}}
+                             </p>
+                             <div class="mt-10">
+                                    <a class="btn btn-dark btn-theme-colored btn-sm mt-10"
+                                           href="{% url 'singleevent' data.slug %}">
+                                           Register
+                                    </a>
+                             </div>
+                      </div>
+               </div>
+        </div>
+{% endfor %}
