@@ -28,8 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 # heroku deployment
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=600)
+# import dj_database_url
+# db_from_env = dj_database_url.config(conn_max_age=600)
 # Application definition
 
 INSTALLED_APPS = [
