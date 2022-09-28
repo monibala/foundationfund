@@ -3,12 +3,14 @@ from django.shortcuts import render
 from django.views.decorators import csrf
 from django.views.decorators.csrf import csrf_exempt
 from superuser.forms import GenForm
-from .models import VolunteerRegister
+from .models import VolunteerRegister,joblist
 # Create your views here.
 def about(request):
     return render(request,'about/about.html')
 @csrf_exempt
 def volunteer(request):
+    res = {}
+    res['volunteer'] = VolunteerRegister.objects.all()
     if request.method == "POST":
         resjson = {}
         form = GenForm(VolunteerRegister)
@@ -30,7 +32,9 @@ def volunteer(request):
             resjson['message'] = mes
             return JsonResponse(resjson)
         pass
-    return render(request,'about/volunteer.html')
+    return render(request,'about/volunteer.html',res)
 
 def job(request):
-    return render(request,'about/job-list.html')
+    res={}
+    res['joblist'] = joblist.objects.all()
+    return render(request,'about/job-list.html',res)

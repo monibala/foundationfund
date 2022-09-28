@@ -1,19 +1,24 @@
 from django.contrib.auth import authenticate, login
 from django.db import models
 from django.shortcuts import redirect, render
+
+from about.models import VolunteerRegister
 from .models import HomeSlider
 from django.http import JsonResponse
 from couses.models import Couses
 from events.models import Events
 from blogs.models import Blog
+from about.models import VolunteerRegister
 # Create your views here.
 def index(request):
     res = {}
     res['sliders'] = HomeSlider.objects.all()
     res['couseslist'] = Couses.objects.all().order_by('-time')
     res['eventlist'] = Events.objects.all().order_by('-eventTime')
+    res['volunteerlist'] = VolunteerRegister.objects.all()
     res['bloglist'] = Blog.objects.filter(type="Blog").order_by('-time')
     res['newslist'] = Blog.objects.filter(type="News").order_by('-time')
+    
     return render(request,'index.html',res)
 def logindashboard(request):
     if request.user.is_authenticated and request.user.is_superuser:

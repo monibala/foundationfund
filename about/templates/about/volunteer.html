@@ -23,6 +23,195 @@
      <div class="container pt-70 pb-40">
       <div class="section-content">
        <div class="row">
+        {% for data in volunteer %}
+        <div class="col-sm-6 col-md-3 mb-30">
+         <div class="team box-hover-effect effect3 border-1px border-bottom-theme-color-2px sm-text-center maxwidth400 mb-sm-30">
+    
+          <div class="thumb">
+           <img alt="" class="img-fullwidth" src="{{data.resume.url}}"/>
+          </div>
+          <div class="content p-20 text-center">
+           <h4 class="name mb-0 mt-0">
+            <a class="text-theme-colored" href="#">
+            {{volunteer.name}}
+            </a>
+           </h4>
+           <p>
+            {{data.branch}}
+           </p>
+           <p class="mb-20">
+            {{data.message}}
+           </p>
+           <ul class="styled-icons icon-dark icon-theme-colored icon-sm">
+            <li>
+             <a href="#">
+              <i class="fa fa-facebook">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              <i class="fa fa-twitter">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              <i class="fa fa-dribbble">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              <i class="fa fa-skype">
+              </i>
+             </a>
+            </li>
+           </ul>
+          </div>
+         
+         </div>
+        </div>
+        {% endfor %}
+
+        <!-- <div class="col-sm-6 col-md-3 mb-30">
+         <div class="team box-hover-effect effect3 border-1px border-bottom-theme-color-2px sm-text-center maxwidth400 mb-sm-30">
+          <div class="thumb">
+           <img alt="" class="img-fullwidth" src="{% static 'images/team/6.jpg' %} "/>
+          </div>
+          <div class="content p-20 text-center">
+           <h4 class="name mb-0 mt-0">
+            <a class="text-theme-colored" href="#">
+             Fiona John
+            </a>
+           </h4>
+           <p>
+            Student / Joined May'16
+           </p>
+           <p class="mb-20">
+            Lorem ipsum dolor sit amet, con amit sectetur adipisicing
+           </p>
+           <ul class="styled-icons icon-dark icon-theme-colored icon-sm">
+            <li>
+             <a href="#">
+              <i class="fa fa-facebook">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              <i class="fa fa-twitter">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              <i class="fa fa-dribbble">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              <i class="fa fa-skype">
+              </i>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="col-sm-6 col-md-3 mb-30">
+         <div class="team box-hover-effect effect3 border-1px border-bottom-theme-color-2px sm-text-center maxwidth400 mb-sm-30">
+          <div class="thumb">
+           <img alt="" class="img-fullwidth" src="{% static 'images/team/7.jpg' %} "/>
+          </div>
+          <div class="content p-20 text-center">
+           <h4 class="name mb-0 mt-0">
+            <a class="text-theme-colored" href="#">
+             Ismail Smith
+            </a>
+           </h4>
+           <p>
+            Student / Joined May'16
+           </p>
+           <p class="mb-20">
+            Lorem ipsum dolor sit amet, con amit sectetur adipisicing
+           </p>
+           <ul class="styled-icons icon-dark icon-theme-colored icon-sm">
+            <li>
+             <a href="#">
+              <i class="fa fa-facebook">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              <i class="fa fa-twitter">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              <i class="fa fa-dribbble">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              <i class="fa fa-skype">
+              </i>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="col-sm-6 col-md-3 mb-30">
+         <div class="team box-hover-effect effect3 border-1px border-bottom-theme-color-2px sm-text-center maxwidth400">
+          <div class="thumb">
+           <img alt="" class="img-fullwidth" src="{% static 'images/team/8.jpg' %} "/>
+          </div>
+          <div class="content p-20 text-center">
+           <h4 class="name mb-0 mt-0">
+            <a class="text-theme-colored" href="#">
+             Jerin Smith
+            </a>
+           </h4>
+           <p>
+            Student / Joined May'16
+           </p>
+           <p class="mb-20">
+            Lorem ipsum dolor sit amet, con amit sectetur adipisicing
+           </p>
+           <ul class="styled-icons icon-dark icon-theme-colored icon-sm">
+            <li>
+             <a href="#">
+              <i class="fa fa-facebook">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              <i class="fa fa-twitter">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              <i class="fa fa-dribbble">
+              </i>
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              <i class="fa fa-skype">
+              </i>
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
         <div class="col-sm-6 col-md-3 mb-30">
          <div class="team box-hover-effect effect3 border-1px border-bottom-theme-color-2px sm-text-center maxwidth400 mb-sm-30">
           <div class="thumb">
@@ -207,192 +396,9 @@
           </div>
          </div>
         </div>
-        <div class="col-sm-6 col-md-3 mb-30">
-         <div class="team box-hover-effect effect3 border-1px border-bottom-theme-color-2px sm-text-center maxwidth400 mb-sm-30">
-          <div class="thumb">
-           <img alt="" class="img-fullwidth" src="{% static 'images/team/5.jpg' %} "/>
-          </div>
-          <div class="content p-20 text-center">
-           <h4 class="name mb-0 mt-0">
-            <a class="text-theme-colored" href="#">
-             Sakib John
-            </a>
-           </h4>
-           <p>
-            Student / Joined May'16
-           </p>
-           <p class="mb-20">
-            Lorem ipsum dolor sit amet, con amit sectetur adipisicing
-           </p>
-           <ul class="styled-icons icon-dark icon-theme-colored icon-sm">
-            <li>
-             <a href="#">
-              <i class="fa fa-facebook">
-              </i>
-             </a>
-            </li>
-            <li>
-             <a href="#">
-              <i class="fa fa-twitter">
-              </i>
-             </a>
-            </li>
-            <li>
-             <a href="#">
-              <i class="fa fa-dribbble">
-              </i>
-             </a>
-            </li>
-            <li>
-             <a href="#">
-              <i class="fa fa-skype">
-              </i>
-             </a>
-            </li>
-           </ul>
-          </div>
-         </div>
-        </div>
-        <div class="col-sm-6 col-md-3 mb-30">
-         <div class="team box-hover-effect effect3 border-1px border-bottom-theme-color-2px sm-text-center maxwidth400 mb-sm-30">
-          <div class="thumb">
-           <img alt="" class="img-fullwidth" src="{% static 'images/team/6.jpg' %} "/>
-          </div>
-          <div class="content p-20 text-center">
-           <h4 class="name mb-0 mt-0">
-            <a class="text-theme-colored" href="#">
-             Fiona John
-            </a>
-           </h4>
-           <p>
-            Student / Joined May'16
-           </p>
-           <p class="mb-20">
-            Lorem ipsum dolor sit amet, con amit sectetur adipisicing
-           </p>
-           <ul class="styled-icons icon-dark icon-theme-colored icon-sm">
-            <li>
-             <a href="#">
-              <i class="fa fa-facebook">
-              </i>
-             </a>
-            </li>
-            <li>
-             <a href="#">
-              <i class="fa fa-twitter">
-              </i>
-             </a>
-            </li>
-            <li>
-             <a href="#">
-              <i class="fa fa-dribbble">
-              </i>
-             </a>
-            </li>
-            <li>
-             <a href="#">
-              <i class="fa fa-skype">
-              </i>
-             </a>
-            </li>
-           </ul>
-          </div>
-         </div>
-        </div>
-        <div class="col-sm-6 col-md-3 mb-30">
-         <div class="team box-hover-effect effect3 border-1px border-bottom-theme-color-2px sm-text-center maxwidth400 mb-sm-30">
-          <div class="thumb">
-           <img alt="" class="img-fullwidth" src="{% static 'images/team/7.jpg' %} "/>
-          </div>
-          <div class="content p-20 text-center">
-           <h4 class="name mb-0 mt-0">
-            <a class="text-theme-colored" href="#">
-             Ismail Smith
-            </a>
-           </h4>
-           <p>
-            Student / Joined May'16
-           </p>
-           <p class="mb-20">
-            Lorem ipsum dolor sit amet, con amit sectetur adipisicing
-           </p>
-           <ul class="styled-icons icon-dark icon-theme-colored icon-sm">
-            <li>
-             <a href="#">
-              <i class="fa fa-facebook">
-              </i>
-             </a>
-            </li>
-            <li>
-             <a href="#">
-              <i class="fa fa-twitter">
-              </i>
-             </a>
-            </li>
-            <li>
-             <a href="#">
-              <i class="fa fa-dribbble">
-              </i>
-             </a>
-            </li>
-            <li>
-             <a href="#">
-              <i class="fa fa-skype">
-              </i>
-             </a>
-            </li>
-           </ul>
-          </div>
-         </div>
-        </div>
-        <div class="col-sm-6 col-md-3 mb-30">
-         <div class="team box-hover-effect effect3 border-1px border-bottom-theme-color-2px sm-text-center maxwidth400">
-          <div class="thumb">
-           <img alt="" class="img-fullwidth" src="{% static 'images/team/8.jpg' %} "/>
-          </div>
-          <div class="content p-20 text-center">
-           <h4 class="name mb-0 mt-0">
-            <a class="text-theme-colored" href="#">
-             Jerin Smith
-            </a>
-           </h4>
-           <p>
-            Student / Joined May'16
-           </p>
-           <p class="mb-20">
-            Lorem ipsum dolor sit amet, con amit sectetur adipisicing
-           </p>
-           <ul class="styled-icons icon-dark icon-theme-colored icon-sm">
-            <li>
-             <a href="#">
-              <i class="fa fa-facebook">
-              </i>
-             </a>
-            </li>
-            <li>
-             <a href="#">
-              <i class="fa fa-twitter">
-              </i>
-             </a>
-            </li>
-            <li>
-             <a href="#">
-              <i class="fa fa-dribbble">
-              </i>
-             </a>
-            </li>
-            <li>
-             <a href="#">
-              <i class="fa fa-skype">
-              </i>
-             </a>
-            </li>
-           </ul>
-          </div>
-         </div>
-        </div>
-       </div>
+       </div> -->
       </div>
+    
      </div>
     </section>
    </div>

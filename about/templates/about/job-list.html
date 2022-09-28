@@ -35,24 +35,27 @@
     <section>
      <div class="container pb-0">
       <div class="row text-center">
+         {% for data in joblist %}
        <div class="col-sm-4">
+         
         <div class="icon-box iconbox-border iconbox-theme-colored p-40">
          <a class="icon icon-gray icon-bordered icon-border-effect effect-flat" href="#">
           <i class="pe-7s-users">
           </i>
          </a>
          <h5 class="icon-box-title">
-          Finance Manager
+          {{data.role}}
          </h5>
          <p class="text-gray">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias non nulla placeat, odio, qui dicta alias.
+          {{data.description}}
          </p>
          <a class="btn btn-dark btn-sm mt-15" href="#">
           Apply Now
          </a>
         </div>
        </div>
-       <div class="col-sm-4">
+       {% endfor %}
+       {% comment %}<div class="col-sm-4">
         <div class="icon-box iconbox-border iconbox-theme-colored p-40">
          <a class="icon icon-gray icon-bordered icon-rounded icon-border-effect effect-rounded" href="#">
           <i class="pe-7s-users">
@@ -86,6 +89,7 @@
          </a>
         </div>
        </div>
+       {% endcomment %}
       </div>
      </div>
     </section>
@@ -98,23 +102,26 @@
           Job List Style
          </h4>
         </div>
+        {% for data in joblist %}
         <div class="icon-box mb-0 p-0">
          <a class="icon icon-gray pull-left mb-0 mr-10" href="#">
           <i class="pe-7s-users">
           </i>
          </a>
          <h3 class="icon-box-title pt-15 mt-0 mb-40">
-          Finance Manager
+          {{data.role}}
          </h3>
          <hr/>
          <p class="text-gray">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi id perspiciatis facilis nulla possimus quasi, amet qui. Ea rerum officia, aspernatur nulla neque nesciunt alias repudiandae doloremque, dolor, quam nostrum laudantium earum illum odio quasi excepturi mollitia corporis quas ipsa modi nihil, ad ex tempore.
+          <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi id perspiciatis facilis nulla possimus quasi, amet qui. Ea rerum officia, aspernatur nulla neque nesciunt alias repudiandae doloremque, dolor, quam nostrum laudantium earum illum odio quasi excepturi mollitia corporis quas ipsa modi nihil, ad ex tempore. -->
+          {{data.description}}
          </p>
          <a class="btn btn-dark btn-sm mt-15" href="#">
           Apply Now
          </a>
         </div>
-        <div class="icon-box mt-80 mb-0 p-0">
+        {% endfor %}
+        <!-- <div class="icon-box mt-80 mb-0 p-0">
          <a class="icon icon-gray pull-left mb-0 mr-10" href="#">
           <i class="pe-7s-users">
           </i>
@@ -146,7 +153,7 @@
           Apply Now
          </a>
         </div>
-       </div>
+       </div> --> 
       </div>
      </div>
     </section>

@@ -33,3 +33,10 @@ class ContactInfo(models.Model):
 class openingHours(models.Model):
     day = models.CharField(max_length=100, help_text="Eg:Mon - Tues :")
     time = models.CharField(max_length=100, help_text="Eg:6.00 am - 10.00 pm or closed")
+
+class joblist(models.Model):
+   
+    role = models.CharField(max_length = 80)
+   
+    description =  models.CharField(max_length=200)
+   

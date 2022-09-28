@@ -211,70 +211,134 @@
      </form>
      <!-- Script for Donation Form Custom Amount -->
      <script type="text/javascript">
-      $(document).ready(function(e) {
-              var $donation_form = $("#popup_paypal_donate_form_onetime_recurring");
-              //toggle custom amount
-              var $custom_other_amount = $donation_form.find("#custom_other_amount");
-              $custom_other_amount.hide();
-              $donation_form.find("[name='amount']").change(function() {
-                  var $this = $(this);
-                  if ($this.val() == 'other') {
-                    $custom_other_amount.show().append('<div class="input-group"><span class="input-group-addon">$</span> <input id="input_other_amount" type="text" name="amount" class="form-control" value="100"/></div>');
-                  }
-                  else{
-                    $custom_other_amount.children( ".input-group" ).remove();
-                    $custom_other_amount.hide();
-                  }
-              });
-
-              //toggle donation_type_choice
-              var $donation_type_choice = $donation_form.find("#donation_type_choice");
-              $donation_type_choice.hide();
-              $("input[name='payment_type']").change(function() {
-                  if (this.value == 'recurring') {
-                      $donation_type_choice.show();
-                  }
-                  else {
-                      $donation_type_choice.hide();
-                  }
-              });
-
-
-              // submit form on click
-              $donation_form.on('submit', function(e){
-                  //$( "#popup_paypal_donate_form-onetime" ).submit();
-                  var item_name = $donation_form.find("select[name='item_name'] option:selected").val();
-                  var currency_code = $donation_form.find("select[name='currency_code'] option:selected").val();
-                  var amount = $donation_form.find("[name='amount']:checked").val();
-                  var t3 = $donation_form.find("input[name='t3']:checked").val();
-
-                  if ( amount == 'other') {
-                    amount = $donation_form.find("#input_other_amount").val();
-                  }
-
-                  // submit proper form now
-                  if ( $("input[name='payment_type']:checked", $donation_form).val() == 'recurring' ) {
-                      var recurring_form = $('#popup_paypal_donate_form-recurring');
-
-                      recurring_form.find("input[name='item_name']").val(item_name);
-                      recurring_form.find("input[name='currency_code']").val(currency_code);
-                      recurring_form.find("input[name='a3']").val(amount);
-                      recurring_form.find("input[name='t3']").val(t3);
-
-                      recurring_form.find("input[type='submit']").trigger('click');
-
-                  } else if ( $("input[name='payment_type']:checked", $donation_form).val() == 'one_time' ) {
-                      var onetime_form = $('#popup_paypal_donate_form-onetime');
-
-                      onetime_form.find("input[name='item_name']").val(item_name);
-                      onetime_form.find("input[name='currency_code']").val(currency_code);
-                      onetime_form.find("input[name='amount']").val(amount);
-
-                      onetime_form.find("input[type='submit']").trigger('click');
-                  }
-                  return false;
-              });
-
+      $(document).ready(function(e) {
+
+              var $donation_form = $("#popup_paypal_donate_form_onetime_recurring");
+
+              //toggle custom amount
+
+              var $custom_other_amount = $donation_form.find("#custom_other_amount");
+
+              $custom_other_amount.hide();
+
+              $donation_form.find("[name='amount']").change(function() {
+
+                  var $this = $(this);
+
+                  if ($this.val() == 'other') {
+
+                    $custom_other_amount.show().append('<div class="input-group"><span class="input-group-addon">$</span> <input id="input_other_amount" type="text" name="amount" class="form-control" value="100"/></div>');
+
+                  }
+
+                  else{
+
+                    $custom_other_amount.children( ".input-group" ).remove();
+
+                    $custom_other_amount.hide();
+
+                  }
+
+              });
+
+
+
+              //toggle donation_type_choice
+
+              var $donation_type_choice = $donation_form.find("#donation_type_choice");
+
+              $donation_type_choice.hide();
+
+              $("input[name='payment_type']").change(function() {
+
+                  if (this.value == 'recurring') {
+
+                      $donation_type_choice.show();
+
+                  }
+
+                  else {
+
+                      $donation_type_choice.hide();
+
+                  }
+
+              });
+
+
+
+
+
+              // submit form on click
+
+              $donation_form.on('submit', function(e){
+
+                  //$( "#popup_paypal_donate_form-onetime" ).submit();
+
+                  var item_name = $donation_form.find("select[name='item_name'] option:selected").val();
+
+                  var currency_code = $donation_form.find("select[name='currency_code'] option:selected").val();
+
+                  var amount = $donation_form.find("[name='amount']:checked").val();
+
+                  var t3 = $donation_form.find("input[name='t3']:checked").val();
+
+
+
+                  if ( amount == 'other') {
+
+                    amount = $donation_form.find("#input_other_amount").val();
+
+                  }
+
+
+
+                  // submit proper form now
+
+                  if ( $("input[name='payment_type']:checked", $donation_form).val() == 'recurring' ) {
+
+                      var recurring_form = $('#popup_paypal_donate_form-recurring');
+
+
+
+                      recurring_form.find("input[name='item_name']").val(item_name);
+
+                      recurring_form.find("input[name='currency_code']").val(currency_code);
+
+                      recurring_form.find("input[name='a3']").val(amount);
+
+                      recurring_form.find("input[name='t3']").val(t3);
+
+
+
+                      recurring_form.find("input[type='submit']").trigger('click');
+
+
+
+                  } else if ( $("input[name='payment_type']:checked", $donation_form).val() == 'one_time' ) {
+
+                      var onetime_form = $('#popup_paypal_donate_form-onetime');
+
+
+
+                      onetime_form.find("input[name='item_name']").val(item_name);
+
+                      onetime_form.find("input[name='currency_code']").val(currency_code);
+
+                      onetime_form.find("input[name='amount']").val(amount);
+
+
+
+                      onetime_form.find("input[type='submit']").trigger('click');
+
+                  }
+
+                  return false;
+
+              });
+
+
+
             });
      </script>
      <!-- Paypal Onetime Form -->

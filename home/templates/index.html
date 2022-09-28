@@ -80,7 +80,7 @@
               <div class="singnature mt-20">
                 <img src="{% static 'images/signature.png' %} " alt="img1">
               </div>
-              <a href="#" class="btn btn-flat btn-colored btn-theme-colored mt-15 mr-15">Read More</a><a href="#"
+              <a href="{% url 'about' %}" class="btn btn-flat btn-colored btn-theme-colored mt-15 mr-15">Read More</a><a href="#"
                 class="btn btn-flat btn-colored btn-default btn-theme-colored mt-15">Get a Quote</a>
             </div>
           </div>
@@ -341,19 +341,19 @@
       </div>
       <div class="section-content">
         <div class="row multi-row-clearfix">
+          {% for data in volunteerlist %}
           <div class="col-xs-12 col-sm-6 col-md-4 mb-30">
             <div class="team-member clearfix">
               <div class="team-thumb">
-                <img alt="" src="{% static 'images/team/team1.jpg' %} " class="img-fullwidth">
+                <img alt="" src="{{data.resume.url}}" class="img-fullwidth">
                 <div class="overlay">
                   <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea iste nihil ex libero ab esse,
-                      dignissimos maxime enim sint laborum.</p>
+                    <p>.{{data.message}}</p>
                   </div>
                 </div>
               </div>
               <div class="team-info bg-theme-colored">
-                <h3 class="mt-0 text-white">Sakib Jacson</h3>
+                <h3 class="mt-0 text-white">{{data.name}}</h3>
                 <ul class="styled-icons icon-circled icon-theme-colored">
                   <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                   <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -362,7 +362,8 @@
               </div>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-6 col-md-4 mb-30">
+          {% endfor %}
+          <!-- <div class="col-xs-12 col-sm-6 col-md-4 mb-30">
             <div class="team-member clearfix">
               <div class="team-thumb">
                 <img alt="" src="{% static 'images/team/team3.jpg' %} " class="img-fullwidth">
@@ -403,7 +404,7 @@
                 </ul>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

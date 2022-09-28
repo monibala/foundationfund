@@ -19,8 +19,12 @@
                   </div>
               </div>
               <p class="mt-20">{{data.subtitle}}</p>
-              <a href="{% static 'page-donate.html' %} "
+              <!-- <a href="{% static 'page-donate.html' %} "
                   class="btn btn-default btn-theme-colored btn-xs font-16 mt-10"><i
+                      class="flaticon-charity-make-a-donation font-16 ml-5"></i> Donate <i
+                      class="flaticon-charity-make-a-donation font-16 ml-5"></i></a> -->
+                      <a class="btn btn-default btn-theme-colored btn-xs font-16 mt-10 ajaxload-popup"
+                      href="{% static 'ajax-load/donation-form.html' %} " ><i
                       class="flaticon-charity-make-a-donation font-16 ml-5"></i> Donate <i
                       class="flaticon-charity-make-a-donation font-16 ml-5"></i></a>
           </div>
