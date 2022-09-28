@@ -296,23 +296,24 @@
                     </div>
                     <div class="section-content">
                         <div class="row">
+                            {% for data in volunteer %}
                             <div class="col-sm-6 col-md-3">
                                 <div
                                     class="team box-hover-effect effect3 border-1px border-bottom-theme-color-2px sm-text-center maxwidth400 mb-sm-30">
                                     <div class="thumb">
-                                        <img alt="" class="img-fullwidth" src="{% static 'images/team/5.jpg' %} " />
+                                        <img alt="" class="img-fullwidth" src="{{data.resume.url}}" />
                                     </div>
                                     <div class="content bg-white p-20 text-center">
                                         <h4 class="name mb-0 mt-0">
                                             <a class="text-theme-colored" href="#">
-                                                Sakib John
+                                                {{data.name}}
                                             </a>
                                         </h4>
                                         <p>
-                                            Student / Joined May'16
+                                          {{data.branch}}
                                         </p>
                                         <p class="mb-20">
-                                            Lorem ipsum dolor sit amet, con amit sectetur adipisicing
+                                         {{data.message}}
                                         </p>
                                         <ul class="styled-icons icon-dark icon-theme-colored icon-sm">
                                             <li>
@@ -343,6 +344,8 @@
                                     </div>
                                 </div>
                             </div>
+                            {% endfor %}
+                            {% comment %}
                             <div class="col-sm-6 col-md-3">
                                 <div
                                     class="team box-hover-effect effect3 border-1px border-bottom-theme-color-2px sm-text-center maxwidth400 mb-sm-30">
@@ -483,7 +486,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div>{% endcomment %}
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,9 @@ from superuser.forms import GenForm
 from .models import VolunteerRegister,joblist
 # Create your views here.
 def about(request):
-    return render(request,'about/about.html')
+    res = {}
+    res['volunteer'] = VolunteerRegister.objects.all()
+    return render(request,'about/about.html',res)
 @csrf_exempt
 def volunteer(request):
     res = {}
