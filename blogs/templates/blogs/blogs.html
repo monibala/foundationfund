@@ -460,34 +460,34 @@
           </h5>
           <ul class="list-divider list-border list check">
            <li>
-            <a href="#">
+           
              Vehicle Accidents
-            </a>
+            
            </li>
            <li>
-            <a href="#">
+           
              Family Law
-            </a>
+            
            </li>
            <li>
-            <a href="#">
+            
              Personal Injury
-            </a>
+         
            </li>
            <li>
-            <a href="#">
+           
              Personal Injury
-            </a>
+           
            </li>
            <li>
-            <a href="#">
+     
              Case Investigation
-            </a>
+        
            </li>
            <li>
-            <a href="#">
+           
              Business Taxation
-            </a>
+            
            </li>
           </ul>
          </div>
@@ -518,7 +518,7 @@
           <div class="tags">
           {% for data in tags %}
             {% url 'tag'|add:type data.tags as tagurl %}
-           <a class="{% if tagurl == request.path %}active{% endif %}" href="{{tagurl}}">
+           <a class="" href="{% url 'blogs' %}">
             {{data.tags}}
            </a>
            {% endfor %}
